@@ -12,19 +12,19 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SheetData } from "../DsaSheet";
 const Questions = () => {
+  
   const [background, setBackground] = useState("black");
-  const navigate = useNavigate();
   const [easy, setEasy] = useState(0);
   const [medium, setMedium] = useState(0);
   const [hard, setHard] = useState(0);
   const [solved, setSolved] = useState(0);
+
   let { id } = useParams();
+
   const getBackground = (id) => {
     return id % 2 === 0 ? "grey" : "black";
   };
 
-  console.log(solved);
-  console.log(easy, medium, hard);
   return (
     <div className="Questions">
       {SheetData.map((data) => {

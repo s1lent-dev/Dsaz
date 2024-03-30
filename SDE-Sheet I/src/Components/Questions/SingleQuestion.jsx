@@ -4,7 +4,7 @@ import lc from "../../assets/leetcode.svg";
 import gfg from "../../assets/gfg.png";
 import art from "../../assets/Articles.webp";
 
-const SingleQuestion = ({data, background, easy, setEasy, setMedium, setHard, setSolved}) => {
+const SingleQuestion = ({data, background, setEasy, setMedium, setHard, setSolved}) => {
   const [status, setStatus] = useState(data.status);
   const[color , setColor] = useState(`${data.status}`);
 
@@ -30,7 +30,6 @@ const SingleQuestion = ({data, background, easy, setEasy, setMedium, setHard, se
     }
   };
 
-  console.log(easy);
   return (
     <div className={`SingleQuestion ${background}`}>
       <div className="status">
