@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 100;
+  text-decoration: none;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* font */
+  //font color
+  --Text: #eaeaea;
+  --primary: #00adb5;
+
+  //font size
+  --xs: 8px;
+  --sm: 12px;
+  --md: 16px;
+  --lg: 20px;
+  --xl: 24px;
+  --xxl: 32px;
+
+  //font weight
+  --bold: 700;
+  --semi-bold: 600;
+  --medium: 500;
+  --regular: 400;
+  --thin: 100;
+
+  //font family
+  --font-family: "Andika", sans-serif;
+  --font-1: "Protest Guerrilla", sans-serif;
+  --font-2: "Kaushan Script", cursive;
+  --font-3: "New Rocker", cursive;
+  --font-4: "Gowun Batang", sans-serif;
+  --main-font: "Titillium Web", sans-serif;
+  --black-bones: "Black Bones", sans-serif;
+  @font-face {
+    font-family: "Black Bones";
+    src: url("./font/Black\ Bones.ttf");
+  }
+
+
+  --backg-1: #222831;
+  --backg-2: #393e46;
+  --backg-3: #252a34;
+  --black: #04152d;
+  --black2: #041226;
+  --black3: #020c1b;
+  --black-lighter: #1c4b91;
+  --black-light: #173d77;
+  --black-medium: #0f2c4b;
+  --sec-color: #ff2e63;
+  --main-color: #00adb5;
+  --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--main-color);
+  }
+  .swiper-pagination-bullet-active {
+    background-color: var(--main-color) !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+

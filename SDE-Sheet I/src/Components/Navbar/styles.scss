@@ -1,0 +1,121 @@
+.Navbar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  transition: all ease 0.5s;
+  &.top {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+  }
+  &.show {
+    background-color: var(--black3);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      .logo {
+        cursor: pointer;
+        img {
+          object-fit: cover;
+          height: 30px;
+        }
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        margin-left: 40px;
+        ul {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          li {
+            cursor: pointer;
+            color: var(--Text);
+            font-family: var(--main-font);
+            margin-left: 30px;
+            list-style-type: none;
+            font-size: 1.2rem;
+
+            &:hover {
+              color: var(--main-color);
+            }
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      .buttons {
+        display: flex;
+        gap: 15px;
+        button {
+          font-size: 1.1rem;
+          padding: 5px 12px 5px 12px;
+          border-radius: 7px;
+          cursor: pointer;
+          background-color: var(--main-color);
+        }
+
+        .login {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          color: var(--Text);
+          font-family: var(--main-font);
+        }
+        .signup {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          background: transparent;
+          border: 2px solid var(--main-color);
+          color: var(--main-color);
+          font-family: var(--main-font);
+        }
+      }
+      .searchbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px solid var(--main-color);
+        height: 30px;
+        border-radius: 20px;
+        padding: 10px 10px 10px 10px;
+        margin-right: 10px;
+        input {
+          background: transparent;
+          border: none;
+          outline: none;
+          color: var(--Text);
+        }
+        .searchIcon {
+          color: var(--Text);
+          opacity: 0.5;
+        }
+      }
+      .pfp {
+        cursor: pointer;
+        img {
+          object-fit: cover;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

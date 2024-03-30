@@ -1,0 +1,13 @@
+.progressbar {
+    background-color: var(--black);
+    border-radius: 50%;
+    padding: 1px;
+    .CircularProgressbar-text {
+        font-size: 24px;
+        font-weight: 100;
+        fill: var(--Text);
+    }
+    .CircularProgressbar-trail {
+        stroke: var(--backg-3);
+    }
+}
