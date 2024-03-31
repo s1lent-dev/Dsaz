@@ -8,7 +8,8 @@ import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SheetData } from "../DsaSheet";
 const Questions = () => {
@@ -19,6 +20,23 @@ const Questions = () => {
   const [hard, setHard] = useState(0);
   const [solved, setSolved] = useState(0);
 
+  const[problems, setProblems] = useState([]);
+  const[sheetData, setSheetData] = useState([]);
+  useEffect(() => {
+    const fetchProblems = async () => {
+      try {
+        const res = await axios.get('http://localhost:3000/api/sheets/getAll');
+        setSheetData(res.data);
+        setProblems(res.data.problem);
+        console.log(res);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchProblems();
+  }, []);
+
+
   let { id } = useParams();
 
   const getBackground = (id) => {
@@ -27,8 +45,8 @@ const Questions = () => {
 
   return (
     <div className="Questions">
-      {SheetData.map((data) => {
-        if (data.id == id) {
+      {sheetData.map((data) => {
+        if (data.topicId == id) {
           return (
             <>
               <div className="container">
@@ -45,9 +63,9 @@ const Questions = () => {
                       <div className="top">
                         <h1>{data.topic}</h1>
                         <ul>
-                          <li>Easy: {data.Easy}</li>
-                          <li>Medium: {data.Medium}</li>
-                          <li>Hard: {data.Hard}</li>
+                          <li>Easy: {data.easy}</li>
+                          <li>Medium: {data.medium}</li>
+                          <li>Hard: {data.hard}</li>
                         </ul>
                         <p className="overview">{data.overview}</p>
                         <div className="buttons">
@@ -72,7 +90,7 @@ const Questions = () => {
                             <h4>Easy</h4>
                             <ProgressBar
                               completed={`${easy}`}
-                              maxCompleted={`${data.Easy}`}
+                              maxCompleted={`${data.easy}`}
                               isLabelVisible={false}
                               bgColor="rgb(0, 184, 163)"
                               width="150px"
@@ -84,7 +102,7 @@ const Questions = () => {
                             <ProgressBar
                               completed={`${medium}`}
                               bgColor="rgb(255, 192, 30)"
-                              maxCompleted={`${data.Medium}`}
+                              maxCompleted={`${data.medium}`}
                               isLabelVisible={false}
                               height="7px"
                               width="150px"
@@ -94,7 +112,7 @@ const Questions = () => {
                             <h4>Hard</h4>
                             <ProgressBar
                               completed={`${hard}`}
-                              maxCompleted={`${data.Hard}`}
+                              maxCompleted={`${data.hard}`}
                               isLabelVisible={false}
                               bgColor="rgb(239, 71, 67)"
                               height="7px"
@@ -117,11 +135,11 @@ const Questions = () => {
                 </div>
                 <div className="line" />
 
-                {data.problems.map((problem) => (
+                {data.problem.map((val) => (
                   <SingleQuestion
-                    data={problem}
-                    key={problem.id}
-                    background={getBackground(problem.id)}
+                    data={val}
+                    key={val.id}
+                    background={getBackground(val.problemId)}
                     setBackground={setBackground}
                     setEasy={setEasy}
                     easy={easy}

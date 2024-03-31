@@ -3,12 +3,13 @@ import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import Progressbar from './Progressbar/Progressbar'
 import PropTypes from "prop-types"
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 const Topics = ({data, islogin}) => {
 
     const navigate = useNavigate();
     const handleClick = () => {
       if(islogin){
-        navigate(`/Dsaz/${data.id}`)
+        navigate(`/Dsaz/${data.topicId}`)
       }else{
         navigate(`/Dsaz/`)
         alert("Please Login to solve the questions")
@@ -20,7 +21,7 @@ const Topics = ({data, islogin}) => {
         <div className="wrapper">
             <div className="left">
                 <h1>{data.topic}</h1>
-                <span>Easy: {data.Easy} - Medium: {data.Medium} - Hard: {data.Hard}</span>
+                <span>Easy: {data.easy} - Medium: {data.medium} - Hard: {data.hard}</span>
                 <button className="play" onClick={handleClick}> <QuestionAnswerIcon /> <span>Solve</span> </button>
             </div>
             <div className="right">
@@ -33,13 +34,13 @@ const Topics = ({data, islogin}) => {
 
 Topics.propTypes = {
     data: PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      topicId: PropTypes.number.isRequired,
       topic: PropTypes.string.isRequired,
       solved: PropTypes.number.isRequired,
       totalQues: PropTypes.number.isRequired,
-      Easy: PropTypes.number.isRequired,
-      Medium: PropTypes.number.isRequired,
-      Hard: PropTypes.number.isRequired,
+      easy: PropTypes.number.isRequired,
+      medium: PropTypes.number.isRequired,
+      hard: PropTypes.number.isRequired,
     })
   }
 

@@ -18,14 +18,14 @@ const SingleQuestion = ({data, background, setEasy, setMedium, setHard, setSolve
     setColor(newStatus.toLowerCase());
 
     if(newStatus === "solved"){
-      if(data.type === "Easy") setEasy((prev) => prev + 1);
-      if(data.type === "Medium") setMedium((prev) => prev + 1);
-      if(data.type === "Hard") setHard((prev) => prev + 1);
+      if(data.difficulty === "Easy") setEasy((prev) => prev + 1);
+      if(data.difficulty  === "Medium") setMedium((prev) => prev + 1);
+      if(data.difficulty  === "Hard") setHard((prev) => prev + 1);
       setSolved((prev) => prev + 1);
     }else if(newStatus === "pending"){
-      if(data.type === "Easy") setEasy((prev) => prev - 1);
-      if(data.type === "Medium") setMedium((prev) => prev - 1);
-      if(data.type === "Hard") setHard((prev) => prev - 1);
+      if(data.difficulty  === "Easy") setEasy((prev) => prev - 1);
+      if(data.difficulty  === "Medium") setMedium((prev) => prev - 1);
+      if(data.difficulty  === "Hard") setHard((prev) => prev - 1);
       setSolved((prev) => prev - 1);
     }
   };
@@ -41,10 +41,10 @@ const SingleQuestion = ({data, background, setEasy, setMedium, setHard, setSolve
         </select>
       </div>
       <div className="question">
-        <h4> <a href={data.article}> {data.question} </a> </h4>
+        <h4> <a href={data.article}> {data.problemId}. {data.title} </a> </h4>
       </div>
       <div className="difficulty">
-        <div className={`type ${data.type}`}>{data.type}</div>
+        <div className={`type ${data.difficulty}`}>{data.difficulty}</div>
       </div>
       <div className="leetcode">
         <a href={data.leetcode}>
@@ -70,6 +70,8 @@ SingleQuestion.propTypes = {
     article: PropTypes.string.isRequired,
     leetcode: PropTypes.string.isRequired,
     gfg: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    difficulty: PropTypes.string.isRequired,
   }).isRequired,
 };
 
