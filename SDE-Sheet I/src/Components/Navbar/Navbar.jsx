@@ -8,10 +8,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const Navbar = ({setisLogin}) => {
+import { useSelector, useDispatch } from "react-redux";
+import { getUser } from "../../context/userSlice";
+const Navbar = () => {
   const [show, setShow] = useState("top");
   const [scroll, setScroll] = useState(0);
-  const [isLogin, setIsLogin] = useState(false);
+  const isLogin = useSelector((state) => state.user.isLogin);
+  const userData = useSelector((state) => state.user.userData);
   const navigate = useNavigate();
   const NavbarScroll = () => {
     if (window.scrollY > 200) {
@@ -34,7 +37,7 @@ const Navbar = ({setisLogin}) => {
   }
 
   const handlesignup = () => {
-    if(!isLogin) navigate("/Dsaz/Signup");
+    navigate("/Dsaz/Signup");
   }
   return (
     <header className={`Navbar ${show}`}>
