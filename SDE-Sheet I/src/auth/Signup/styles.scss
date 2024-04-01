@@ -1,0 +1,161 @@
+.Signup {
+    height: 100%;
+    width: 100%;
+    .container {
+      height: 1000px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 20px 20px 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        height: 700px;
+        background-color: var(--black-dark);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        .opacity-layer {
+          width: 100%;
+          height: 250px;
+          background: linear-gradient(
+            180deg,
+            rgba(4, 21, 45, 0) 0%,
+            #04152d 75.17%
+          );
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+        form {
+          width: 85%;
+          height: 85%;
+          background-color: var(--black);
+          border-radius: 12px;
+          border: 1px solid var(--backg-2);
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 25px 25px 25px 25px;
+          h1 {
+            color: var(--Text);
+            font-size: 2rem;
+            font-weight: lighter;
+            margin-bottom: 20px;
+          }
+          .buttons {
+            display: flex;
+            gap: 50px;
+            .btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              background-color: var(--black-medium);
+              padding: 15px 20px 15px 20px;
+              border: none;
+              border-radius: 5px;
+              color: var(--Text);
+              font-size: 1rem;
+              opacity: 0.5;
+              cursor: pointer; /* Added cursor pointer */
+              &:hover {
+                opacity: 1;
+                color: var(--main-color);
+            }
+            }
+          }
+          .partition {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 20px 0;
+            width: 85%;
+            .line1 {
+              flex: 1;
+              height: 1px;
+              background-color: var(--backg-2);
+            }
+            .line2 {
+              flex: 1;
+              height: 1px;
+              background-color: var(--backg-2);
+            }
+            p {
+              flex: 1;
+              text-align: center;
+              color: var(--backg-2);
+            }
+          }
+          .Grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            margin-bottom: 25px;
+            margin-top: 15px;
+            width: 85%;
+            input {
+              background-color: transparent;
+              border: none;
+              border-radius: 5px;
+              padding: 10px 15px;
+              font-size: 1rem;
+              color: var(--Text);
+              border-bottom: 1px solid var(--backg-2);
+              &:focus {
+                outline: none;
+                border-bottom-color: var(--Text);
+              }
+            }
+          }
+          .createBtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--black-medium);
+            border: none;
+            padding: 10px 15px 10px 15px;
+            border-radius: 25px;
+            color: var(--Text);
+            cursor: pointer;
+            button{
+                background-color: transparent;
+                border: none;
+                color: var(--Text);
+                font-size: 1rem;
+                cursor: pointer !important; /* Added cursor pointer */
+            }
+          }
+          .line {
+            width: 75%;
+            height: 1px;
+            background-color: var(--backg-2);
+            margin: 20px 0 20px 0;
+          }
+          .already {
+            p {
+              display: flex;
+              gap: 10px;
+              color: var(--Text);
+              a {
+                color: var(--black-lighter);
+                text-decoration: none;
+                cursor: pointer !important; /* Added cursor pointer */
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

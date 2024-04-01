@@ -8,12 +8,7 @@ const Topics = ({data, islogin}) => {
 
     const navigate = useNavigate();
     const handleClick = () => {
-      if(islogin){
-        navigate(`/Dsaz/${data.topicId}`)
-      }else{
-        navigate(`/Dsaz/`)
-        alert("Please Login to solve the questions")
-      }
+      navigate(`/Dsaz/${data.topicId}`)
     }
 
   return (

@@ -62,11 +62,8 @@ const SingleQuestion = ({data, background, setEasy, setMedium, setHard, setSolve
 
 SingleQuestion.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    problemId: PropTypes.number.isRequired,
     status: PropTypes.string.isRequired,
-    isSolved: PropTypes.bool.isRequired,
-    type: PropTypes.string.isRequired,
-    question: PropTypes.string.isRequired,
     article: PropTypes.string.isRequired,
     leetcode: PropTypes.string.isRequired,
     gfg: PropTypes.string.isRequired,

@@ -7,10 +7,12 @@ import pfp from "../../assets/PFP 1.jpg";
 import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Navbar = ({setisLogin}) => {
   const [show, setShow] = useState("top");
   const [scroll, setScroll] = useState(0);
   const [isLogin, setIsLogin] = useState(false);
+  const navigate = useNavigate();
   const NavbarScroll = () => {
     if (window.scrollY > 200) {
       if (window.scrollY > scroll) {
@@ -28,8 +30,11 @@ const Navbar = ({setisLogin}) => {
   }, [scroll]);
 
   const handlelogin = () => {
-    setIsLogin(true);
-    setisLogin(true);
+    navigate("/Dsaz/Signin");
+  }
+
+  const handlesignup = () => {
+    if(!isLogin) navigate("/Dsaz/Signup");
   }
   return (
     <header className={`Navbar ${show}`}>
@@ -62,7 +67,7 @@ const Navbar = ({setisLogin}) => {
             ) : (
               <div className="buttons">
                 <button className="login" onClick={handlelogin}> <LoginIcon /> Login</button>
-                <button className="signup"> <VpnKeyIcon /> Sign Up</button>
+                <button className="signup" onClick={handlesignup}> <VpnKeyIcon /> Sign Up</button>
               </div>
             )}
           </div>

@@ -1,26 +1,19 @@
 import React from "react";
 import "./styles.scss";
 import Topics from "./Topics";
-import { SheetData } from "../DsaSheet";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useSelector } from "react-redux";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
+import { useFetch } from "../../context/ApiCalls";
+
 const Sheet = ({ islogin }) => {
-  const [sheetData, setSheetData] = useState([]);
+  // Use useSelector to access Redux state
+  const sheetData = useSelector((state) => state.sheet);
+  console.log(sheetData);
 
-  useEffect(() => {
-    const fetchSheetData = async () => {
-      try {
-        const res = await axios.get('http://localhost:3000/api/sheets/getAll');
-        setSheetData(res.data);
-        console.log(res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    fetchSheetData();
-  }, []);
+  // Use the useFetch hook to fetch data and manage loading/error states
+  const { loading, error } = useFetch('http://localhost:3000/api/sheets/getAll');
 
+  // Chunk the data
   const chunkedData = [];
   for (let i = 0; i < sheetData.length; i += 3) {
     chunkedData.push(sheetData.slice(i, i + 3));
@@ -30,15 +23,22 @@ const Sheet = ({ islogin }) => {
     <div className="Sheet">
       <ContentWrapper>
         <div className="container">
-          {chunkedData.map((chunk, index) => (
-            <div className="row" key={index}>
-              {chunk.map((data, index) => (
-                <div className="column" key={data.topicId}>
-                  <Topics data={data} islogin={islogin} />
-                </div>
-              ))}
-            </div>
-          ))}
+          {loading ? (
+            <div>Loading...</div>
+          ) : error ? (
+            <div>Error: {error.message}</div>
+          ) : (
+            chunkedData.map((chunk, index) => (
+              <div className="row" key={index}>
+                {chunk.map((data, index) => (
+                  <div className="column" key={data.topicId}>
+                    {/* Pass data to Topics component */}
+                    <Topics data={data} islogin={islogin} />
+                  </div>
+                ))}
+              </div>
+            ))
+          )}
         </div>
       </ContentWrapper>
     </div>
