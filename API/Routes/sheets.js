@@ -13,8 +13,11 @@ router.post('/create', async (req, res) => {
             solved: req.body.solved,
             totalQues: req.body.totalQues,
             easy: req.body.easy,
+            totalEasy: req.body.totalEasy,
             medium: req.body.medium,
+            totalMedium: req.body.totalMedium,
             hard: req.body.hard,
+            totalHard: req.body.totalHard,
             overview: req.body.overview
         });
         const sheet = await newSheet.save();

@@ -137,7 +137,7 @@
           backdrop-filter: blur(3.5px);
           -webkit-backdrop-filter: blur(3.5px);
           padding: 40px 40px 40px 40px;
-          span{
+          .solved{
             font-size: 1rem;
             font-family: var(--main-font);
             color: var(--Text);
@@ -153,30 +153,66 @@
             flex-direction: column;
             gap: 20px;
             .easy {
-              h4 {
-                font-size: 0.8rem;
-                font-family: var(--main-font);
-                color: var(--Text);
-                font-weight: lighter;
-                margin-bottom: 5px;
+              .lable{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4 {
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
+                span{
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
               }
             }
             .medium {
-              h4 {
-                font-size: 0.8rem;
-                font-family: var(--main-font);
-                color: var(--Text);
-                font-weight: lighter;
-                margin-bottom: 5px;
+              .lable{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4 {
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
+                span{
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
               }
             }
             .hard {
-              h4 {
-                font-size: 0.8rem;
-                font-family: var(--main-font);
-                color: var(--Text);
-                font-weight: lighter;
-                margin-bottom: 5px;
+              .lable{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                h4 {
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
+                span{
+                  font-size: 0.8rem;
+                  font-family: var(--main-font);
+                  color: var(--Text);
+                  font-weight: lighter;
+                  margin-bottom: 5px;
+                }
               }
             }
           }
@@ -239,6 +275,10 @@
 
   &.grey {
     background-color: var(--black-medium);
+  }
+
+  &.black {
+    background-color: var(--black);
   }
 
   .status {

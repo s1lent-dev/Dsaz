@@ -1,75 +1,53 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import lc from "../../assets/leetcode.svg";
 import gfg from "../../assets/gfg.png";
-import art from "../../assets/Articles.webp";
+import { useSelector } from 'react-redux';
 
-const SingleQuestion = ({data, background, setEasy, setMedium, setHard, setSolved}) => {
-  const [status, setStatus] = useState(data.status);
-  const[color , setColor] = useState(`${data.status}`);
+const SingleQuestion = () => {
+  const data = useSelector((state) => state.singleSheet);
 
-  const handleChange = (e) => {
-    const newStatus = e.target.value;
-    if(status === "pending" && newStatus === "revisit"){
-      alert("Solve the question first");
-      return;
-    }
-    setStatus(newStatus);
-    setColor(newStatus.toLowerCase());
-
-    if(newStatus === "solved"){
-      if(data.difficulty === "Easy") setEasy((prev) => prev + 1);
-      if(data.difficulty  === "Medium") setMedium((prev) => prev + 1);
-      if(data.difficulty  === "Hard") setHard((prev) => prev + 1);
-      setSolved((prev) => prev + 1);
-    }else if(newStatus === "pending"){
-      if(data.difficulty  === "Easy") setEasy((prev) => prev - 1);
-      if(data.difficulty  === "Medium") setMedium((prev) => prev - 1);
-      if(data.difficulty  === "Hard") setHard((prev) => prev - 1);
-      setSolved((prev) => prev - 1);
-    }
-  };
+  // Check if data.problem is defined and is an array before mapping over it
+  if (!data.problem || !Array.isArray(data.problem)) {
+    return null; // Or you can render a loading indicator or error message
+  }
 
   return (
-    <div className={`SingleQuestion ${background}`}>
-      <div className="status">
-        <div className={`dot ${color}`} />
-        <select name="currentStatus" value={status} onChange={handleChange}>
-          <option value="pending" >Pending</option>
-          <option value="revisit" >Revisit</option>
-          <option value="solved" >Solved</option>
-        </select>
-      </div>
-      <div className="question">
-        <h4> <a href={data.article}> {data.problemId}. {data.title} </a> </h4>
-      </div>
-      <div className="difficulty">
-        <div className={`type ${data.difficulty}`}>{data.difficulty}</div>
-      </div>
-      <div className="leetcode">
-        <a href={data.leetcode}>
-          <img src={lc} alt="" />
-        </a>
-      </div>
-      <div className="gfg">
-        <a href={data.gfg}>
-          <img src={gfg} alt="" />
-        </a>
-      </div>
-    </div>
+    <>
+      {data.problem.map((problem, index) => {
+        // Set the background color based on the problemId
+        const background = index % 2 === 0 ? 'black' : 'grey';
+        return (
+          <div className={`SingleQuestion ${background}`} key={index}>
+            <div className="status">
+              <div className='dot' />
+              <select name="currentStatus">
+                <option value="pending">Pending</option>
+                <option value="revisit">Revisit</option>
+                <option value="solved">Solved</option>
+              </select>
+            </div>
+            <div className="question">
+              <h4><a href={problem.article}>{problem.problemId}. {problem.title}</a></h4>
+            </div>
+            <div className="difficulty">
+              <div className={`type ${problem.difficulty}`}>{problem.difficulty}</div>
+            </div>
+            <div className="leetcode">
+              <a href={problem.leetcode}>
+                <img src={lc} alt="" />
+              </a>
+            </div>
+            <div className="gfg">
+              <a href={problem.gfg}>
+                <img src={gfg} alt="" />
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </>
   );
-};
-
-SingleQuestion.propTypes = {
-  data: PropTypes.shape({
-    problemId: PropTypes.number.isRequired,
-    status: PropTypes.string.isRequired,
-    article: PropTypes.string.isRequired,
-    leetcode: PropTypes.string.isRequired,
-    gfg: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    difficulty: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default SingleQuestion;

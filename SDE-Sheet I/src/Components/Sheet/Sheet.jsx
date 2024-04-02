@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import { useFetch } from "../../context/ApiCalls";
 
-const Sheet = ({ islogin }) => {
+const Sheet = () => {
   // Use useSelector to access Redux state
   const sheetData = useSelector((state) => state.sheet);
-  console.log(sheetData);
+  const isLogin = useSelector((state) => state.user.isLogin);
 
   // Use the useFetch hook to fetch data and manage loading/error states
   const { loading, error } = useFetch('http://localhost:3000/api/sheets/getAll');
@@ -33,7 +33,7 @@ const Sheet = ({ islogin }) => {
                 {chunk.map((data, index) => (
                   <div className="column" key={data.topicId}>
                     {/* Pass data to Topics component */}
-                    <Topics data={data} islogin={islogin} />
+                    <Topics data={data} islogin={isLogin} />
                   </div>
                 ))}
               </div>

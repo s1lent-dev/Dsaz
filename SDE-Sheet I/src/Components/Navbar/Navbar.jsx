@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./styles.scss";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import SearchIcon from "@mui/icons-material/Search";
@@ -6,39 +6,67 @@ import Logo from "../../assets/Dsaz logo.svg";
 import pfp from "../../assets/PFP 1.jpg";
 import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getUser } from "../../context/userSlice";
+import { useNavigate } from "react-router-dom";
+import Profile from "./Profile";
+
 const Navbar = () => {
-  const [show, setShow] = useState("top");
-  const [scroll, setScroll] = useState(0);
+  const [navbarState, setNavbarState] = useState({
+    show: "top",
+    scroll: 0,
+    profileVisible: false
+  });
+
+  const { show, scroll, profileVisible } = navbarState;
+
   const isLogin = useSelector((state) => state.user.isLogin);
-  const userData = useSelector((state) => state.user.userData);
   const navigate = useNavigate();
-  const NavbarScroll = () => {
-    if (window.scrollY > 200) {
-      if (window.scrollY > scroll) {
-        setShow("show");
-      } else {
-        setShow("top");
-      }
-    }
-    setScroll(window.scrollY);
-  };
+  const profileRef = useRef(null);
 
   useEffect(() => {
+    const NavbarScroll = () => {
+      const newScroll = window.scrollY;
+      setNavbarState(prevState => ({
+        ...prevState,
+        show: newScroll > 200 ? (newScroll > scroll ? "show" : "top") : "top",
+        scroll: newScroll
+      }));
+    };
+
     window.addEventListener("scroll", NavbarScroll);
     return () => window.removeEventListener("scroll", NavbarScroll);
   }, [scroll]);
 
-  const handlelogin = () => {
+  useEffect(() => {
+    const handleClickOutsideProfile = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setNavbarState(prevState => ({
+          ...prevState,
+          profileVisible: false
+        }));
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutsideProfile);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideProfile);
+    };
+  }, []);
+
+  const handleLogin = () => {
     navigate("/Dsaz/Signin");
   }
 
-  const handlesignup = () => {
+  const handleSignup = () => {
     navigate("/Dsaz/Signup");
   }
+
+  const handleProfileClick = () => {
+    setNavbarState(prevState => ({
+      ...prevState,
+      profileVisible: !profileVisible
+    }));
+  }
+
   return (
     <header className={`Navbar ${show}`}>
       <ContentWrapper>
@@ -63,14 +91,15 @@ const Navbar = () => {
                   <input type="text" placeholder="Search for a topic" />
                   <SearchIcon className="searchIcon" />
                 </div>
-                <div className="pfp">
+                <div className="pfp" onClick={handleProfileClick} ref={profileRef}>
                   <img src={pfp} alt="" />
                 </div>
+                {profileVisible && <Profile />}
               </>
             ) : (
               <div className="buttons">
-                <button className="login" onClick={handlelogin}> <LoginIcon /> Login</button>
-                <button className="signup" onClick={handlesignup}> <VpnKeyIcon /> Sign Up</button>
+                <button className="login" onClick={handleLogin}> <LoginIcon /> Login</button>
+                <button className="signup" onClick={handleSignup}> <VpnKeyIcon /> Sign Up</button>
               </div>
             )}
           </div>

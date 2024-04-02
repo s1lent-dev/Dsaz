@@ -122,19 +122,53 @@
             margin-bottom: 25px;
             margin-top: 15px;
             width: 85%;
-            input {
-              background-color: transparent;
-              border: none;
-              border-radius: 5px;
-              padding: 10px 15px;
-              font-size: 1rem;
-              color: var(--Text);
-              border-bottom: 1px solid var(--backg-2);
-              &:focus {
-                outline: none;
-                border-bottom-color: var(--Text);
+            .input-wrapper{
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              .input{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border: none;
+                border-bottom: 1px solid var(--backg-2);
+                gap: 10px;
+                &:focus-within{
+                  border: none;
+                  border-bottom: 1px solid var(--Text);
+                }
+                input{
+                  border: none;
+                  border-bottom: none;
+                }
+                span{
+                  color: var(--backg-2);
+                  font-size: 1rem;
+                  cursor: pointer;
+                }
+              }
+              input {
+                background-color: transparent;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                font-size: 1rem;
+                color: var(--Text);
+                border-bottom: 1px solid var(--backg-2);
+                &:focus {
+                  outline: none;
+                  border-bottom-color: var(--Text);
+                }
+              }
+              .error {
+                color: var(--main-color);
+                font-size: 0.75rem;
+                margin-top: 5px;
+                margin-left: 5px;
+                width: 100%;
               }
             }
+            
           }
           .line {
             width: 75%;

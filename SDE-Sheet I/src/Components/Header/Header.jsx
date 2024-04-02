@@ -28,11 +28,8 @@ const Header = () => {
             delay: 4000,
             disableOnInteraction: false,
           }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {Dsadata.map((data, index) => (
-            console.log("movie_URL", data.URL),
             <SwiperSlide key={data?.id}>
               <SingleHead data={data} />
             </SwiperSlide>

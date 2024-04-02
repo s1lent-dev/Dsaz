@@ -5,7 +5,7 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  transition: all ease 0.5s;
+  transition: all ease 1s;
   &.top {
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3.5px);
@@ -115,6 +115,166 @@
           object-fit: cover;
           height: 30px;
           border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+// profile.jsx
+
+.profile{
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 40px;
+    background-color: var(--black);
+    position: absolute;
+    top: 65px;
+    right: 125px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    .top{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      img{
+        object-fit: cover;
+        height: 75px;
+        border-radius: 50%;
+      }
+      .info{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h4{
+          font-size: 1.5rem;
+          font-family: var(--main-font);
+          color: var(--Text);
+          font-weight: bold;
+        }
+        p{
+          display: block;
+          width: 200px;
+          font-size: 1rem;
+          font-family: var(--main-font);
+          color: var(--main-color);
+          font-weight: light;
+        }
+      }
+    }
+    .mid{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      border: 1px solid var(--main-color);
+      border-radius: 12px;
+      padding: 20px 20px 20px 20px;
+      .left{
+        .progress{
+          width: 100px;
+          height: 100px;
+        }
+      }
+      .right{
+        .typewiseprogress {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .easy {
+            .lable{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              span{
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+              }
+              h4 {
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+                margin-bottom: 5px;
+              }
+            }
+          }
+          .medium {
+            .lable{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              span{
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+              }
+              h4 {
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+                margin-bottom: 5px;
+              }
+            }
+          }
+          .hard {
+            .lable{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              span{
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+              }
+              h4 {
+                font-size: 0.8rem;
+                font-family: var(--main-font);
+                color: var(--Text);
+                font-weight: lighter;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottom{
+      width: 100%;
+      ul{
+        display: flex;
+        flex-direction: column;
+        li{
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 40px;
+          color: var(--Text);
+          font-family: var(--main-font);
+          opacity: 0.5;
+          font-size: 1.2rem;
+          padding: 10px 10px 10px 10px;
+
+          button{
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--Text);
+            font-family: var(--main-font);
+            font-size: 1.2rem;
+            font-weight: lighter;
+          }
         }
       }
     }

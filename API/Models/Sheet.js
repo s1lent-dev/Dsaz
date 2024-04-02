@@ -18,8 +18,11 @@ const SheetSchema = new mongoose.Schema({
     solved: { type: Number, required: true },
     totalQues: { type: Number, required: true },
     easy: { type: Number, required: true },
+    totalEasy: { type: Number, required: true },
     medium: { type: Number, required: true },
+    totalMedium: { type: Number, required: true },
     hard: { type: Number, required: true },
+    totalHard: { type: Number, required: true },
     overview: { type: String }
 }, { timestamps: true });
 

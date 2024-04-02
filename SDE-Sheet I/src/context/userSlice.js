@@ -3,18 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    isLogin: false, // Initialize isLogin to false
-    userData: {} // Initialize userData
+    isLogin: JSON.parse(localStorage.getItem("isLogin")) || false,
+    userData: {},
   },
   reducers: {
     getUser: (state, action) => {
-      state.userData = action.payload; // Update userData with the received data
+      state.userData = action.payload;
     },
     setIsLogin: (state, action) => {
-      state.isLogin = action.payload; // Update isLogin state
+      state.isLogin = action.payload;
+    },
+    logoutUser: (state) => {
+      state.isLogin = false;
+      state.userData = {};
     },
   },
 });
 
-export const { getUser, setIsLogin } = userSlice.actions;
+export const { getUser, setIsLogin, logoutUser } = userSlice.actions;
 export default userSlice.reducer;
