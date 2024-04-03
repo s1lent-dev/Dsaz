@@ -13,7 +13,7 @@ import { setIsLogin, logoutUser } from "../../context/userSlice"; // Import the 
 const Profile = () => {
   const dispatch = useDispatch(); // Get dispatch function
   const isLogin = useSelector((state) => state.user.isLogin); // Get isLogin state
-  const sheetData = useSelector((state) => state.sheet);
+  const sheetData = useSelector((state) => state.sheet.sheetData);
   const userData = useSelector((state) => state.user.userData);
   const [profileState, setProfileState] = useState({ questions: 0, solved: 0, easy: 0, medium: 0, hard: 0, totalEasy: 0, totalMedium: 0, totalHard: 0 });
 
@@ -42,13 +42,14 @@ const Profile = () => {
   }, [sheetData]);
 
   const handleLogout = () => {
-    localStorage.setItem("isLogin", false);
-    localStorage.setItem("userData", JSON.stringify({}));
+    localStorage.removeItem("isLogin");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("sheetData");
+    localStorage.removeItem("singleSheetData");
+    localStorage.removeItem("singlesheetdata")
     dispatch(logoutUser());
   };
   
-
-  console.log(isLogin)
 
   return (
     <div className="profile">

@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 import Topics from "./Topics";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import { useFetch } from "../../context/ApiCalls";
+import { setSheetData } from "../../context/sheetSlice";
 
 const Sheet = () => {
-  // Use useSelector to access Redux state
-  const sheetData = useSelector((state) => state.sheet);
+  const dispatch = useDispatch();
+  const sheetData = useSelector((state) => state.sheet.sheetData);
   const isLogin = useSelector((state) => state.user.isLogin);
+  const userData = useSelector((state) => state.user.userData);
+  const isLoading = useSelector((state) => state.sheet.isLoading);
+  const isError = useSelector((state) => state.sheet.isError);
+  const AuthToken = userData.accessToken;
 
   // Use the useFetch hook to fetch data and manage loading/error states
-  const { loading, error } = useFetch('http://localhost:3000/api/sheets/getAll');
+  const { fetchData } = useFetch();
+
+  useEffect(() => {
+    if (isLogin && AuthToken) {
+      fetchData('http://localhost:3000/api/sheets/getAll', AuthToken);
+    }
+  }, []);
 
   // Chunk the data
   const chunkedData = [];
@@ -23,15 +34,17 @@ const Sheet = () => {
     <div className="Sheet">
       <ContentWrapper>
         <div className="container">
-          {loading ? (
+          {!isLogin ? (
+            <p>Please log in to view sheet data.</p>
+          ) : isLoading ? (
             <div>Loading...</div>
-          ) : error ? (
-            <div>Error: {error.message}</div>
+          ) : isError ? (
+            <div>Error: {isError.message}</div>
           ) : (
             chunkedData.map((chunk, index) => (
               <div className="row" key={index}>
-                {chunk.map((data, index) => (
-                  <div className="column" key={data.topicId}>
+                {chunk.map((data) => (
+                  <div className="column" key={data._id}>
                     {/* Pass data to Topics component */}
                     <Topics data={data} islogin={isLogin} />
                   </div>

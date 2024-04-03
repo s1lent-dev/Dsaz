@@ -37,21 +37,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", NavbarScroll);
   }, [scroll]);
 
-  useEffect(() => {
-    const handleClickOutsideProfile = (event) => {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setNavbarState(prevState => ({
-          ...prevState,
-          profileVisible: false
-        }));
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutsideProfile);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutsideProfile);
-    };
-  }, []);
-
   const handleLogin = () => {
     navigate("/Dsaz/Signin");
   }

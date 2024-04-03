@@ -18,9 +18,11 @@ const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { login, loading, error } = useLogin(); // Initialize the useLogin hook
   const isLogin = useSelector((state) => state.user.isLogin);
+  console.log(isLogin);
   const dispatch = useDispatch(); // Initialize useDispatch
   const navigate = useNavigate();
-
+  
+  
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("*Invalid email").required("*Email is required"),
     password: Yup.string().required("*Password is required"),

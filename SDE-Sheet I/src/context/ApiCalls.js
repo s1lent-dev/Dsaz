@@ -1,55 +1,75 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setSheetData } from './sheetSlice';
-import { setSingleSheetData } from './singleSheetSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSheetData, setIsLoading,  setIsError  } from './sheetSlice';
+import { setSingleSheetData, setisLoading,  setisError, setsinglesheetdata} from './singleSheetSlice';
 import { getUser, setIsLogin } from './userSlice';
 
-const useFetch = (url) => {
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const dispatch = useDispatch();
+const useFetch = () => {
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(url);
-                const data = res.data;
-                dispatch(setSheetData(data));
-                setLoading(false);
-            } catch (error) {
-                setError(error);
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, [url, dispatch]);
+  const fetchData = async (url, token) => {
+    try {
+        const res = await axios.get(url, { headers: { token: `Bearer ${token}` } });
+        const data = res.data;
+        dispatch(setSheetData(data));
+        dispatch(setIsLoading(false));
+        localStorage.setItem("sheetData", JSON.stringify(data));
+        localStorage.setItem("isLoading", false);
+        localStorage.setItem("isError", false);
+    } catch (error) {
+        dispatch(setIsError(true));
+        dispatch(setIsLoading(false));
+        console.log(error);
+    }
+  };
 
-    return { loading, error };
+  return { fetchData };
 };
 
-const useFetchSingleSheet = (url) => {
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+const useFetchSingleSheet = () => {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async (url, token) => {
             try {
-                const res = await axios.get(url);
+                const res = await axios.get(url, { headers: { token: `Bearer ${token}` } });
                 const data = res.data;
                 dispatch(setSingleSheetData(data));
-                setLoading(false);
+                dispatch(setisLoading(false));
+                localStorage.setItem("singleSheetData", JSON.stringify(data));
+                localStorage.setItem("isLoading", false);
+                localStorage.setItem("isError", false);
             } catch (error) {
-                setError(error);
-                setLoading(false);
+                dispatch(setisError(true));
+                dispatch(setisLoading(false));
+                console.log(error);
             }
         };
 
-        fetchData();
-    }, [url, dispatch]);
+    return { fetchData };
+};
 
-    return { loading, error };
+
+const useUpdate = () => {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const updateStatus = async (url, token, body) => {
+    setLoading(true);
+    try {
+      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}` } });
+      const data = res.data;
+      dispatch(setsinglesheetdata(data)); // Update local state with the updated data
+      localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  return { updateStatus, loading, error };
 };
 
 
@@ -74,41 +94,42 @@ const useRegister = () => {
 };
 
 const useLogin = () => {
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const dispatch = useDispatch();
-  
-    const login = async (url, body) => {
-      setLoading(true);
-      try {
-        const res = await axios.post(url, body);
-        const data = res.data;
-        console.log(data);
-        if(data){
-            const expirationDate = new Date();
-            expirationDate.setDate(expirationDate.getDate() + 10);
-            localStorage.setItem("isLogin", true); // Corrected to set isLogin to true
-            dispatch(getUser(data));
-            dispatch(setIsLogin(true));
-        }
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
-  
-    useEffect(() => {
-      const expirationDate = localStorage.getItem("expirationDate");
-      if (expirationDate && new Date(parseInt(expirationDate)) > new Date()) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+
+  const login = async (url, body) => {
+    setLoading(true);
+    try {
+      const res = await axios.post(url, body);
+      const data = res.data;
+      console.log(data);
+      if (data) {
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 10);
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("userData", JSON.stringify(data)); // Set userData
+        localStorage.setItem("expirationDate", expirationDate.getTime()); // Set expirationDate
+        dispatch(getUser(data));
         dispatch(setIsLogin(true));
       }
-    }, [dispatch]);
-  
-    return { login, loading, error };
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
   };
-  
-  
+
+  useEffect(() => {
+    const expirationDate = localStorage.getItem("expirationDate");
+    const isLoginLocalStorage = JSON.parse(localStorage.getItem("isLogin"));
+    if (isLoginLocalStorage && expirationDate && new Date(parseInt(expirationDate)) > new Date()) {
+      dispatch(setIsLogin(true));
+    }
+  }, [dispatch]);
+
+  return { login, loading, error };
+};
 
 
-export { useFetch, useRegister, useLogin, useFetchSingleSheet };
+export { useFetch, useRegister, useLogin, useFetchSingleSheet, useUpdate };

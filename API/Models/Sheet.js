@@ -4,6 +4,7 @@ const ProblemSchema = new mongoose.Schema({
     problemId: { type: Number, required: true, unique: true },
     title: { type: String, required: true },
     status: { type: String, required: true },
+    isSolvable: { type: Boolean, required: true },
     difficulty: { type: String, required: true },
     article: { type: String },
     leetcode: { type: String },
@@ -26,4 +27,5 @@ const SheetSchema = new mongoose.Schema({
     overview: { type: String }
 }, { timestamps: true });
 
+module.exports = mongoose.model("SingleSheet", ProblemSchema);
 module.exports = mongoose.model("Sheet", SheetSchema);
