@@ -4,6 +4,7 @@ export const sheetSlice = createSlice({
   name: "sheet",
   initialState: 
   { 
+    topicId: JSON.parse(localStorage.getItem("topicId")) || 0,
     isLoading: JSON.parse(localStorage.getItem("isLoading")) || false,
     sheetData: JSON.parse(localStorage.getItem("sheetData")) || [],
     isError: JSON.parse(localStorage.getItem("isError")) || false,
@@ -19,13 +20,17 @@ export const sheetSlice = createSlice({
     setIsError: (state, action) => {
       state.isError = action.payload;
     },
+    setIsTopicId: (state, action) => {
+      state.topicId = action.payload;
+    }
 }
 });
 
 export const {
   setSheetData,
   setIsLoading,
-  setIsError
+  setIsError,
+  setIsTopicId
 } = sheetSlice.actions;
 
 export default sheetSlice.reducer;

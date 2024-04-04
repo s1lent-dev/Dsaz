@@ -14,13 +14,11 @@ const Sheet = () => {
   const isLoading = useSelector((state) => state.sheet.isLoading);
   const isError = useSelector((state) => state.sheet.isError);
   const AuthToken = userData.accessToken;
-
   // Use the useFetch hook to fetch data and manage loading/error states
   const { fetchData } = useFetch();
-
   useEffect(() => {
-    if (isLogin && AuthToken) {
-      fetchData('http://localhost:3000/api/sheets/getAll', AuthToken);
+    if (isLogin) {
+      fetchData('http://localhost:3000/api/testing/testGetAll', userData.email); // Pass email as a parameter
     }
   }, []);
 

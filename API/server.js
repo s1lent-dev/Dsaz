@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const AuthRoute = require("./Routes/auth");
 const UserRoute = require("./Routes/users");
 const SheetRoute = require("./Routes/sheets");
+const TestRoute = require("./Routes/testing");
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ Server.use(express.json());
 Server.use("/api/auth", AuthRoute);
 Server.use("/api/users", UserRoute);
 Server.use("/api/sheets", SheetRoute);
+Server.use("/api/testing", TestRoute);
 
 Server.listen(3000, () => {
   console.log(`Server started on port ${process.env.PORT}`);

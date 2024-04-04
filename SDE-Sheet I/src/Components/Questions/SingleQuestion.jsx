@@ -20,11 +20,11 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
 
   const handleStatusChange = async (problemId, newStatus, difficulty) => {
     const body = { status: newStatus, difficulty: difficulty };
-    if (isLogin && AuthToken) {
+    if (isLogin) {
       await updateStatus(
-        `http://localhost:3000/api/sheets/update/${topicId}/${problemId}`,
-        AuthToken,
-        body
+        `http://localhost:3000/api/testing/testUpdate/${topicId}/${problemId}`,
+        body,
+        userData.email
       );
       setSelectedStatus(newStatus);
     }
@@ -70,11 +70,5 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
   );
 };
 
-SingleQuestion.propTypes = {
-  topicId: PropTypes.string.isRequired,
-  problem: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired,
-  background: PropTypes.string.isRequired,
-};
 
 export default SingleQuestion;

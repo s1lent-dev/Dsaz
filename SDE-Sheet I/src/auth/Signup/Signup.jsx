@@ -63,7 +63,7 @@ const Signup = () => {
     };
     try {
       // Call the signup function from the useRegister hook with values
-      await signup("http://localhost:3000/api/auth/register", body);
+      await signup("http://localhost:3000/api/testing/testRegister", body);
       // Redirect after successful signup
     } catch (error) {
       console.error(error);

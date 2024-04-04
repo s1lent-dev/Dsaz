@@ -8,31 +8,33 @@ import { getUser, setIsLogin } from './userSlice';
 const useFetch = () => {
   const dispatch = useDispatch();
 
-  const fetchData = async (url, token) => {
+  const fetchData = async (url, email) => { // Pass email as a separate parameter
     try {
-        const res = await axios.get(url, { headers: { token: `Bearer ${token}` } });
-        const data = res.data;
-        dispatch(setSheetData(data));
-        dispatch(setIsLoading(false));
-        localStorage.setItem("sheetData", JSON.stringify(data));
-        localStorage.setItem("isLoading", false);
-        localStorage.setItem("isError", false);
+      const res = await axios.get(url, { params: { email } }); // Pass email as a query parameter
+      const data = res.data;
+      dispatch(setSheetData(data));
+      dispatch(setIsLoading(false));
+      localStorage.setItem("sheetData", JSON.stringify(data));
+      localStorage.setItem("isLoading", false);
+      localStorage.setItem("isError", false);
     } catch (error) {
-        dispatch(setIsError(true));
-        dispatch(setIsLoading(false));
-        console.log(error);
+      dispatch(setIsError(true));
+      dispatch(setIsLoading(false));
+      console.log(error);
     }
   };
 
   return { fetchData };
 };
 
+export default useFetch;
+
+
 const useFetchSingleSheet = () => {
     const dispatch = useDispatch();
-
-        const fetchData = async (url, token) => {
+        const fetchData = async (url, email) => {
             try {
-                const res = await axios.get(url, { headers: { token: `Bearer ${token}` } });
+                const res = await axios.get(url, { params: { email } });
                 const data = res.data;
                 dispatch(setSingleSheetData(data));
                 dispatch(setisLoading(false));
@@ -55,10 +57,10 @@ const useUpdate = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const updateStatus = async (url, token, body) => {
+  const updateStatus = async (url, body, email) => {
     setLoading(true);
     try {
-      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}` } });
+      const res = await axios.put(url, body, { params: { email } });
       const data = res.data;
       dispatch(setsinglesheetdata(data)); // Update local state with the updated data
       localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
@@ -103,7 +105,6 @@ const useLogin = () => {
     try {
       const res = await axios.post(url, body);
       const data = res.data;
-      console.log(data);
       if (data) {
         const expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + 10);

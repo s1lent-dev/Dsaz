@@ -20,14 +20,14 @@ const Profile = () => {
   useEffect(() => {
     let totalQuestions = 0, totalSolved = 0, totalEasy = 0, totalMedium = 0, totalHard = 0, easy = 0, medium = 0, hard = 0;
     for (let i = 0; i < sheetData.length; i++) {
-      totalQuestions += sheetData[i].totalQues;
-      totalSolved += sheetData[i].solved;
-      totalEasy += sheetData[i].totalEasy;
-      totalMedium += sheetData[i].totalMedium;
-      totalHard += sheetData[i].totalHard;
-      easy += sheetData[i].easy;
-      medium += sheetData[i].medium;
-      hard += sheetData[i].hard;
+      totalQuestions += sheetData[i].topic.totalQues;
+      totalSolved += sheetData[i].topic.solved;
+      totalEasy += sheetData[i].topic.totalEasy;
+      totalMedium += sheetData[i].topic.totalMedium;
+      totalHard += sheetData[i].topic.totalHard;
+      easy += sheetData[i].topic.solvedEasy;
+      medium += sheetData[i].topic.solvedMedium;
+      hard += sheetData[i].topic.solvedHard;
     }
     setProfileState({
       questions: totalQuestions,

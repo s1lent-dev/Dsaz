@@ -4,8 +4,8 @@ export const singleSheetSlice = createSlice({
   name: "singleSheet",
   initialState: {
     isLoading: JSON.parse(localStorage.getItem("isLoading")) || false,
-    sheetData: JSON.parse(localStorage.getItem("singleSheetData")) || [],
-    singleSheetData: JSON.parse(localStorage.getItem("singlesheetdata")) || [],
+    sheetData: JSON.parse(localStorage.getItem("singleSheetData")) || {},
+    singleSheetData: JSON.parse(localStorage.getItem("singlesheetdata")) || {},
     isError: JSON.parse(localStorage.getItem("isError")) || false,
   },
   reducers: {
