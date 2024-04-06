@@ -4,13 +4,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSheetData, setIsLoading,  setIsError  } from './sheetSlice';
 import { setSingleSheetData, setisLoading,  setisError, setsinglesheetdata} from './singleSheetSlice';
 import { getUser, setIsLogin } from './userSlice';
+import { setTopicsData } from './TopicSlice';
+
+const useFetchAllTopics = () => {
+  const dispatch = useDispatch();
+  const fetchData = async (url) => {
+    try {
+      const res = await axios.get(url);
+      const data = res.data;
+      dispatch(setTopicsData(data));
+      localStorage.setItem("allTopics", JSON.stringify(data));
+    } catch (error) { 
+      console.log(error);
+    }
+  };
+  return { fetchData };
+};
 
 const useFetch = () => {
   const dispatch = useDispatch();
-
-  const fetchData = async (url, email) => { // Pass email as a separate parameter
+  const fetchData = async (url, token, email) => { // Pass email as a separate parameter
     try {
-      const res = await axios.get(url, { params: { email } }); // Pass email as a query parameter
+      const res = await axios.get(url, { headers: { token : `Bearer ${token}` } , params: { email } }); // Pass email as a query parameter
       const data = res.data;
       dispatch(setSheetData(data));
       dispatch(setIsLoading(false));
@@ -32,9 +47,9 @@ export default useFetch;
 
 const useFetchSingleSheet = () => {
     const dispatch = useDispatch();
-        const fetchData = async (url, email) => {
+        const fetchData = async (url, token, email) => {
             try {
-                const res = await axios.get(url, { params: { email } });
+                const res = await axios.get(url, { headers: {token : `Bearer ${token}`}, params: { email } });
                 const data = res.data;
                 dispatch(setSingleSheetData(data));
                 dispatch(setisLoading(false));
@@ -57,10 +72,10 @@ const useUpdate = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const updateStatus = async (url, body, email) => {
+  const updateStatus = async (url, token, body, email) => {
     setLoading(true);
     try {
-      const res = await axios.put(url, body, { params: { email } });
+      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}`} , params: { email } });
       const data = res.data;
       dispatch(setsinglesheetdata(data)); // Update local state with the updated data
       localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
@@ -73,6 +88,28 @@ const useUpdate = () => {
 
   return { updateStatus, loading, error };
 };
+
+const useUpdateNotes = () => {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const updateNotes = async (url, token, body, email) => {
+    setLoading(true);
+    try {
+      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}`} , params: { email } });
+      const data = res.data;
+      dispatch(setsinglesheetdata(data)); // Update local state with the updated data
+      localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+  return { updateNotes, loading, error };
+};
+
 
 
 
@@ -133,4 +170,4 @@ const useLogin = () => {
 };
 
 
-export { useFetch, useRegister, useLogin, useFetchSingleSheet, useUpdate };
+export { useFetch, useRegister, useLogin, useFetchSingleSheet, useUpdate, useFetchAllTopics, useUpdateNotes };

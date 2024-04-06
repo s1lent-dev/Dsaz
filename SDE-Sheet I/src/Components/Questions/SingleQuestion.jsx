@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import lc from "../../assets/leetcode.svg";
 import gfg from "../../assets/gfg.png";
+import note from "../../assets/Articles.webp"
 import { useSelector } from "react-redux";
 import { useUpdate } from "../../context/ApiCalls";
+import Notes from "./Notes";
 
-const SingleQuestion = ({ topicId, problem, index, background }) => {
+const SingleQuestion = ({ topicId, problem, index, background, setIsNotesOpen, setProblem }) => {
   
   const data = useSelector((state) => state.singleSheet.sheetData);
   const { updateStatus, loading, error } = useUpdate();
@@ -13,7 +15,6 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
   const isLogin = useSelector((state) => state.user.isLogin);
   const AuthToken = userData.accessToken;
   const [selectedStatus, setSelectedStatus] = useState(problem.status); 
-
   useEffect(() => {
     setSelectedStatus(problem.status);
   }, [problem.status]);
@@ -22,7 +23,8 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
     const body = { status: newStatus, difficulty: difficulty };
     if (isLogin) {
       await updateStatus(
-        `http://localhost:3000/api/testing/testUpdate/${topicId}/${problemId}`,
+        `http://localhost:3000/api/sheets/update/${topicId}/${problemId}`,
+        AuthToken,
         body,
         userData.email
       );
@@ -30,7 +32,13 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
     }
   };
 
+  const handleNotes = () => {
+    setIsNotesOpen(true);
+    setProblem(problem);
+  }
+
   return (
+    
     <div className={`SingleQuestion ${background}`}>
       <div className="status">
         <div className={`dot ${selectedStatus}`} />
@@ -65,6 +73,9 @@ const SingleQuestion = ({ topicId, problem, index, background }) => {
         <a href={problem.gfg}>
           <img src={gfg} alt="" />
         </a>
+      </div>
+      <div className="notes">
+        <img src={note} alt="" onClick={handleNotes} />
       </div>
     </div>
   );

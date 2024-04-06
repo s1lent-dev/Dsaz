@@ -30,7 +30,7 @@ const Signin = () => {
 
   const handleLogin = async (values, { setSubmitting }) => {
     try {
-      const res = await login("http://localhost:3000/api/testing/testLogin", values);
+      const res = await login("http://localhost:3000/api/auth/login", values);
       if (res) {
         dispatch(setIsLogin(true)); // Dispatch action to set isLogin to true
       }
@@ -120,7 +120,7 @@ const Signin = () => {
                       Don't have an account? <a href="/Dsaz/Signup">Sign Up</a>
                     </p>
                   </div>
-                  {error && <div className="error">{error.message}</div>}
+                  {error && <div className="error">Invalid Email or Password !</div>}
                 </Form>
               )}
             </Formik>

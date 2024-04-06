@@ -22,39 +22,36 @@ const Signup = () => {
     lastName: Yup.string().required("*Last Name is required"),
     email: Yup.string()
       .email("*Invalid email address")
-      .required("*Email is required"),
+      .required("*Email is required")
+      .matches(
+        /^[a-z][a-z0-9.]*@gmail\.com$/,
+        "*Email must be a valid Gmail address"
+      ),
     password: Yup.string()
       .required("*Password is required")
-      .test(
-        "password-strength",
-        "*Password must be at least 6 characters ",
-        value => {
-          // Check password strength
-          const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
-          const moderateRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-          const weakRegex = /^(?=.*\d).{6,}$/;
-
-          if (strongRegex.test(value)) {
-            return true; // Strong password
-          } else if (moderateRegex.test(value)) {
-            return true; // Moderate password
-          } else if (weakRegex.test(value)) {
-            return true; // Weak password
-          } else {
-            return false; // Password doesn't meet criteria
-          }
-        }
-      )
-      .test(
-        "password-length",
-        "*Password must be at least 6 characters",
-        value => value.length >= 6
+      .matches(
+        /^(?=.*[A-Z])[a-zA-Z\d@#.$%^&*!_]{6,}$/,
+        "*Password must be at least 6 characters with at least one capital letter and 2 or more integers"
       )
   });
 
+  // Function to determine password strength
+  const getPasswordStrength = (value) => {
+    if (value.length >= 6) {
+      if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)/.test(value)) {
+        return "Strong";
+      } else if (/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(value)) {
+        return "Moderate";
+      } else {
+        return "Weak";
+      }
+    } else {
+      return "";
+    }
+  };
+
   // Handle form submission
   const handleSubmit = async (values, { setSubmitting }) => {
-    console.log(values);
     const { firstName, lastName, email, password } = values;
     const body = {
       username: `${firstName} ${lastName}`,
@@ -63,19 +60,16 @@ const Signup = () => {
     };
     try {
       // Call the signup function from the useRegister hook with values
-      await signup("http://localhost:3000/api/testing/testRegister", body);
+      await signup("http://localhost:3000/api/auth/register", body);
       // Redirect after successful signup
     } catch (error) {
       console.error(error);
+      // Redirect to error page or show error toast
     } finally {
       setSubmitting(false);
       navigate("/Dsaz/Signin");
     }
   };
-
-  
-
-  
 
   return (
     <div className="Signup">
@@ -93,7 +87,7 @@ const Signup = () => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({ isSubmitting }) => (
+              {({ isSubmitting, values }) => (
                 <Form className="Form">
                   <h1>Create An Account</h1>
                   <div className="buttons">
@@ -141,28 +135,33 @@ const Signup = () => {
                       <Field type="email" name="email" placeholder="Email" />
                       <ErrorMessage
                         name="email"
-                        component="div"
-                        className="error"
+                        render={msg => <div className="error">{msg}</div>}
                       />
                     </div>
                     <div className="input-wrapper">
                       <div className="input">
-                      <Field
-                        type={showPassword ? "text" : "password"} // Toggle password visibility based on state
-                        name="password"
-                        placeholder="Password"
-                      />
-                      <span
-                        className="eye-icon"
-                        onClick={() => setShowPassword(!showPassword)} // Toggle show/hide password
-                      >
-                        {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                      </span>
+                        <Field
+                          type={showPassword ? "text" : "password"} // Toggle password visibility based on state
+                          name="password"
+                          placeholder="Password"
+                        />
+                        <span
+                          className="eye-icon"
+                          onClick={() => setShowPassword(!showPassword)} // Toggle show/hide password
+                        >
+                          {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                        </span>
                       </div>
                       <ErrorMessage
                         name="password"
                         render={msg => <div className="error">{msg}</div>}
                       />
+                      {values.password && (
+                        <div className={`password-strength ${getPasswordStrength(values.password)}`}>
+                          {getPasswordStrength(values.password)}
+                          <div className={`line ${getPasswordStrength(values.password)}`}></div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -183,7 +182,7 @@ const Signup = () => {
                       <a href="/Dsaz/Signin">Sign In</a>
                     </p>
                   </div>
-                  {error && <div className="error">{error.message}</div>}
+                  {error && <div className="error">Username or password is invalid</div>}
                 </Form>
               )}
             </Formik>

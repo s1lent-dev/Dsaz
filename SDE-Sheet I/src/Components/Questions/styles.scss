@@ -137,7 +137,7 @@
           backdrop-filter: blur(3.5px);
           -webkit-backdrop-filter: blur(3.5px);
           padding: 40px 40px 40px 40px;
-          .solved{
+          .solved {
             font-size: 1rem;
             font-family: var(--main-font);
             color: var(--Text);
@@ -153,7 +153,7 @@
             flex-direction: column;
             gap: 20px;
             .easy {
-              .lable{
+              .lable {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -164,7 +164,7 @@
                   font-weight: lighter;
                   margin-bottom: 5px;
                 }
-                span{
+                span {
                   font-size: 0.8rem;
                   font-family: var(--main-font);
                   color: var(--Text);
@@ -174,7 +174,7 @@
               }
             }
             .medium {
-              .lable{
+              .lable {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -185,7 +185,7 @@
                   font-weight: lighter;
                   margin-bottom: 5px;
                 }
-                span{
+                span {
                   font-size: 0.8rem;
                   font-family: var(--main-font);
                   color: var(--Text);
@@ -195,7 +195,7 @@
               }
             }
             .hard {
-              .lable{
+              .lable {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -206,7 +206,7 @@
                   font-weight: lighter;
                   margin-bottom: 5px;
                 }
-                span{
+                span {
                   font-size: 0.8rem;
                   font-family: var(--main-font);
                   color: var(--Text);
@@ -230,8 +230,7 @@
     align-items: center;
     flex-direction: row;
     border-radius: 10px;
-    padding-left: 30px;
-    margin-bottom: 10px;
+    padding: 15px 20px 15px 20px;
     h6 {
       font-size: 1.2rem;
       font-family: var(--main-font);
@@ -240,18 +239,30 @@
     }
     .status {
       flex: 4;
+      margin-left: 25px;
     }
     .question {
       flex: 8;
     }
     .art {
       flex: 2;
+      display: flex;
+      justify-content: center;
     }
     .lc {
       flex: 2;
+      display: flex;
+      justify-content: center;
     }
     .gfg {
-      flex: 1.5;
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+    .notes {
+      flex: 2;
+      display: flex;
+      justify-content: center;
     }
   }
   .line {
@@ -259,7 +270,7 @@
     height: 1px;
     background-color: var(--Text);
     opacity: 0.25;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 }
@@ -291,13 +302,13 @@
       height: 20px;
       width: 20px;
       border-radius: 50%;
-      &.pending{
+      &.pending {
         background-color: red;
       }
-      &.solved{
+      &.solved {
         background-color: green;
       }
-      &.revisit{
+      &.revisit {
         background-color: orange;
       }
     }
@@ -316,8 +327,11 @@
   }
   .question {
     flex: 8;
+    overflow: hidden; /* Hide the overflow content */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Display dots (...) when text overflows */
     h4 {
-      a{
+      a {
         font-size: 1.4rem;
         font-family: var(--main-font);
         color: var(--Text);
@@ -332,8 +346,10 @@
   }
   .difficulty {
     flex: 2;
-    .type{
-
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    .type {
       &.Easy {
         color: rgb(0, 184, 163);
       }
@@ -343,10 +359,13 @@
       &.Hard {
         color: rgb(255, 55, 95);
       }
-  }
+    }
   }
   .leetcode {
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
     a {
       img {
         height: 35px;
@@ -356,7 +375,10 @@
     }
   }
   .gfg {
-    flex: 2px;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
     a {
       img {
         height: 35px;
@@ -365,4 +387,85 @@
       }
     }
   }
+  .notes {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    img {
+      height: 35px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+
+//* Notes.jsx
+
+.notes-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's above other content */
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  .notes-header{
+    width : 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+      font-size: 1.6rem;
+      font-family: var(--font-family);
+      color: var(--Text);
+    }
+    button{
+      font-size: 0.8rem;
+      padding: 5px 10px 5px 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background-color: var(--main-color);
+      color: var(--Text);
+      font-family: var(--font-family);
+    }
+  }
+  .notes-input{
+    textarea{
+      background-color: var(--black);
+      color: var(--Text);
+      border: 1px solid var(--main-color);
+      border-radius: 10px;
+      padding: 10px;
+    }
+  }
+  .notes-footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    button{
+      font-size: 0.8rem;
+      padding: 5px 15px 5px 15px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background-color: var(--main-color);
+      color: var(--Text);
+      font-family: var(--font-family);
+    }
+  }
+}
 }

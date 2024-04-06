@@ -1,26 +1,38 @@
 const router = require("express").Router();
+const User = require("../Models/User");
 const Sheet = require("../Models/Sheet");
 const verify = require("../verifyToken");
 // Create
 router.post("/create", async (req, res) => {
   try {
-    const newSheet = new Sheet({
+    const sheet = new Sheet({
       topicId: req.body.topicId,
       topic: req.body.topic,
-      problem: req.body.problem,
-      img: req.body.img,
-      solved: req.body.solved,
+      solved: 0,
+      solvedEasy: 0,
+      solvedMedium: 0,
+      solvedHard: 0,
       totalQues: req.body.totalQues,
-      easy: req.body.easy,
       totalEasy: req.body.totalEasy,
-      medium: req.body.medium,
       totalMedium: req.body.totalMedium,
-      hard: req.body.hard,
       totalHard: req.body.totalHard,
       overview: req.body.overview,
+      problems: req.body.problems,
+      img: req.body.img,
     });
-    const sheet = await newSheet.save();
-    res.status(201).json(sheet);
+    const newSheet = await sheet.save();
+    res.status(201).json(newSheet);
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).send("Server Error 500");
+  }
+});
+
+// Get Sheets
+router.get("/getSheets", async (req, res) => {
+  try {
+    const sheets = await Sheet.find();
+    res.status(200).json(sheets);
   } catch (error) {
     console.log("error", error);
     res.status(500).send("Server Error 500");
@@ -30,82 +42,129 @@ router.post("/create", async (req, res) => {
 // Get
 router.get("/get/:topicId", verify, async (req, res) => {
   try {
-    const sheet = await Sheet.findOne({
-      user: req.user._id,
-      topicId: req.params.topicId,
+    const user = await User.findOne({
+      email: req.query.email,
+      "sheetData.topicId": req.params.topicId,
     });
-    res.status(200).json(sheet);
-  } catch (error) {
-    res.status(500).send("Server Error");
-  }
-});
-
-// Get All
-router.get("/getAll", verify, async (req, res) => {
-  try {
-    const sheets = await Sheet.find({ user: req.user._id });
-    res.status(200).json(sheets);
-  } catch (error) {
-    console.log("error", error);
-    res.status(500).send("Server Error");
-  }
-});
-
-// Update
-router.put("/update/:topicId/:problemId", verify, async (req, res) => {
-  try {
-    // Step 1: Find the sheet based on the topicId provided in the params
-    const sheet = await Sheet.findOne({ topicId: req.params.topicId, user: req.user._id });
-
-    if (!sheet) {
+    if (!user) {
       return res.status(404).json({ message: "Sheet not found for the given topic" });
     }
-
-    // Step 2: Find the problemId in the problem array in that sheet
-    const problemIndex = sheet.problem.findIndex(
-      problem => problem.problemId === parseInt(req.params.problemId)
-    );
-    if (problemIndex === -1) {
-      return res.status(404).json({ message: "Problem not found in the sheet" });
+    const sheet = user.sheetData.find((data) => data.topicId === parseInt(req.params.topicId));
+    if (!sheet) {
+      return res.status(404).json({ message: "Sheet not found for the given topicId" });
     }
-
-    // Step 3: Update the status of that particular problem to req.body.status
-    sheet.problem[problemIndex].status = req.body.status;
-
-    // Step 4: Increment/decrement the solved number in the sheet based on req.body.status
-    if (req.body.status === "solved" && !sheet.problem[problemIndex].isSolvable) {
-      sheet.solved += 1;
-      sheet.problem[problemIndex].isSolvable = true;
-      if (req.body.difficulty === "Easy") {
-        sheet.easy += 1;
-      } else if (req.body.difficulty === "Medium") {
-        sheet.medium += 1;
-      } else if (req.body.difficulty === "Hard") {
-        sheet.hard += 1;
-      }
-    } else if (req.body.status === "pending" && sheet.problem[problemIndex].isSolvable) {
-      sheet.problem[problemIndex].isSolvable = false;
-      sheet.solved -= 1;
-      if (req.body.difficulty === "Easy") {
-        sheet.easy -= 1;
-      } else if (req.body.difficulty === "Medium") {
-        sheet.medium -= 1;
-      } else if (req.body.difficulty === "Hard") {
-        sheet.hard -= 1;
-      }
-    } 
-
-    // Step 5: Increment easy, medium, hard members of sheet based on req.body.status and req.body.difficulty
-
-    // Step 6: Save the updated sheet and return the response
-    const updatedSheet = await sheet.save();
-    res.status(200).json(updatedSheet);
+    res.status(200).json(sheet);
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Server Error");
   }
 });
 
+
+// Get All
+router.get("/getAll", verify, async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.query.email }); // Use req.query instead of req.body for GET requests
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const sheets = user.sheetData;
+    res.status(200).json(sheets); // Return sheet data instead of user object
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Server Error");
+  }
+});
+
+// Update
+router.put("/update/:topicId/:problemId", verify,  async (req, res) => {
+  try {
+    const user = await User.findOne({
+      email: req.query.email,
+      "sheetData.topicId": req.params.topicId,
+    });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "Sheet not found for the given topic" });
+    }
+    const sheet = user.sheetData.find((data) => data.topicId === parseInt(req.params.topicId));
+    const problemIndex = sheet.problems.findIndex(
+      (problem) => problem.problemId === parseInt(req.params.problemId)
+    );
+    if (problemIndex === -1) {
+      return res
+        .status(404)
+        .json({ message: "Problem not found in the sheet" });
+    }
+    const problem = sheet.problems[problemIndex];
+    // Update problem status and increment solved counters based on difficulty level
+    problem.status = req.body.status;
+    if (
+      req.body.status === "solved" &&
+      problem.isSolvable
+    ) {
+      sheet.solved++;
+      problem.isSolvable = false;
+      if (problem.difficulty === "Easy") {
+        sheet.solvedEasy++;
+      } else if (problem.difficulty === "Medium") {
+        sheet.solvedMedium++;
+      } else if (problem.difficulty === "Hard") {
+        sheet.solvedHard++;
+      }
+    } else if (
+      req.body.status === "pending" &&
+      !problem.isSolvable
+    ) {
+      // Adjust solved counters accordingly when problem status is changed to pending
+      sheet.solved--;
+      problem.isSolvable = true;
+      if (problem.difficulty === "Easy") {
+        sheet.solvedEasy--;
+      } else if (problem.difficulty === "Medium") {
+        sheet.solvedMedium--;
+      } else if (problem.difficulty === "Hard") {
+        sheet.solvedHard--;
+      }
+    }
+    const newUser = await user.save(); 
+    res.status(200).json(newUser);
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Server Error");
+  }
+});
+
+router.put("/updateNotes/:topicId/:problemId", verify, async (req, res) => {
+  try{
+    const user = await User.findOne({
+      email: req.query.email,
+      "sheetData.topicId": req.params.topicId,
+    });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "Sheet not found for the given topic" });
+    }
+    const sheet = user.sheetData.find((data) => data.topicId === parseInt(req.params.topicId));
+    const problemIndex = sheet.problems.findIndex(
+      (problem) => problem.problemId === parseInt(req.params.problemId)
+    );
+    if (problemIndex === -1) {
+      return res
+        .status(404)
+        .json({ message: "Problem not found in the sheet" });
+    }
+    const problem = sheet.problems[problemIndex];
+    problem.notes = req.body.notes;
+    const newUser = await user.save();
+    res.status(200).json(newUser);
+  }catch{
+    console.error("Error:", error);
+    res.status(500).send("Server Error");
+  }
+});
 
 
 module.exports = router;

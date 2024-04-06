@@ -125,7 +125,7 @@
             .input-wrapper{
               display: flex;
               flex-direction: column;
-              gap: 10px;
+              gap: 5px;
               .input{
                 display: flex;
                 flex-direction: row;
@@ -160,6 +160,39 @@
                   border-bottom-color: var(--Text);
                 }
               }
+              .password-strength{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 5px;
+                gap: 10px;
+                font-size: 0.75rem;
+
+                &.Weak{
+                  color: rgb(0, 184, 163);
+                }
+                &.Moderate{
+                  color: rgb(255, 192, 30);
+                }
+                &.Strong{
+                  color: rgb(239, 71, 67);
+              }
+                .line{
+                  width: 25%;
+                  height: 5px;
+                  border-radius: 5px;
+                  background-color: transparent;
+                  &.Weak{
+                    background-color: rgb(0, 184, 163);
+                  }
+                  &.Moderate{
+                    background-color: rgb(255, 192, 30);
+                  }
+                  &.Strong{
+                    background-color: rgb(239, 71, 67);
+                }
+              }
+            }
               .error {
                 color: var(--main-color);
                 font-size: 0.75rem;

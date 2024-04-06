@@ -1,31 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import Topics from "./Topics";
 import { useSelector, useDispatch } from "react-redux";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import { useFetch } from "../../context/ApiCalls";
 import { setSheetData } from "../../context/sheetSlice";
+import Loading from "./Loading";
 
 const Sheet = () => {
   const dispatch = useDispatch();
+  const Topic = useSelector((state) => state.Topics.topic);
   const sheetData = useSelector((state) => state.sheet.sheetData);
   const isLogin = useSelector((state) => state.user.isLogin);
   const userData = useSelector((state) => state.user.userData);
   const isLoading = useSelector((state) => state.sheet.isLoading);
   const isError = useSelector((state) => state.sheet.isError);
   const AuthToken = userData.accessToken;
-  // Use the useFetch hook to fetch data and manage loading/error states
   const { fetchData } = useFetch();
+  const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     if (isLogin) {
-      fetchData('http://localhost:3000/api/testing/testGetAll', userData.email); // Pass email as a parameter
+      fetchData(
+        "http://localhost:3000/api/sheets/getAll",
+        AuthToken,
+        userData.email
+      ); // Pass email as a parameter
     }
   }, []);
 
+  useEffect(() => {
+    if (Topic) {
+      const filtered = sheetData.filter((data) =>
+        data.topic.toLowerCase().includes(Topic.toLowerCase())
+      );
+      setFilteredData(filtered);
+    } else {
+      setFilteredData(sheetData);
+    }
+  }, [Topic, sheetData]);
+
   // Chunk the data
   const chunkedData = [];
-  for (let i = 0; i < sheetData.length; i += 3) {
-    chunkedData.push(sheetData.slice(i, i + 3));
+  for (let i = 0; i < filteredData.length; i += 3) {
+    chunkedData.push(filteredData.slice(i, i + 3));
   }
 
   return (
@@ -33,7 +51,7 @@ const Sheet = () => {
       <ContentWrapper>
         <div className="container">
           {!isLogin ? (
-            <p>Please log in to view sheet data.</p>
+            <Loading />
           ) : isLoading ? (
             <div>Loading...</div>
           ) : isError ? (

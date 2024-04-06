@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import Header from '../../Components/Header/Header'
 import Sheet from '../../Components/Sheet/Sheet'
+
 const Home = ({islogin}) => {
 
   return (

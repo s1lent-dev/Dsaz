@@ -1,3 +1,5 @@
+// Navbar.js
+
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.scss";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
@@ -7,22 +9,21 @@ import pfp from "../../assets/PFP 1.jpg";
 import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { setTopic } from "../../context/TopicSlice";
 import Profile from "./Profile";
-
 const Navbar = () => {
   const [navbarState, setNavbarState] = useState({
     show: "top",
     scroll: 0,
-    profileVisible: false
+    profileVisible: false,
   });
-
-  const { show, scroll, profileVisible } = navbarState;
-
+  const dispatch = useDispatch();
+  const { show, scroll, profileVisible, searchValue } = navbarState;
   const isLogin = useSelector((state) => state.user.isLogin);
+  const isHomepage = useSelector((state) => state.Topics.isHomepage);
   const navigate = useNavigate();
   const profileRef = useRef(null);
-
   useEffect(() => {
     const NavbarScroll = () => {
       const newScroll = window.scrollY;
@@ -52,6 +53,11 @@ const Navbar = () => {
     }));
   }
 
+  const handleSearchChange = (event) => {
+    const { value } = event.target;
+    dispatch(setTopic(value));
+  }
+
   return (
     <header className={`Navbar ${show}`}>
       <ContentWrapper>
@@ -73,7 +79,7 @@ const Navbar = () => {
             {isLogin ? (
               <>
                 <div className="searchbar">
-                  <input type="text" placeholder="Search for a topic" />
+                  <input type="text" placeholder={isHomepage ? "Search for a topic" : "Search for a Problem"} value={searchValue} onChange={handleSearchChange} />
                   <SearchIcon className="searchIcon" />
                 </div>
                 <div className="pfp" onClick={handleProfileClick} ref={profileRef}>
