@@ -9,7 +9,7 @@ const Arrays = {
     "problems" : [
         {
             "problemId" : 1,
-            "title": "Reverse the array/string",
+            "title": "Reverse the Array/String",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/reverse-a-string/",
             "leetcode": "https://leetcode.com/problems/reverse-string/description/",
@@ -25,7 +25,7 @@ const Arrays = {
         },
         {
             "problemId" : 3,
-            "title": "\"Kth\" max and min element of an array",
+            "title": "\"Kth\" Max and Min Element of an Array",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/kth-largest-smallest-element-in-an-array/",
             "leetcode": "https://leetcode.com/problems/kth-largest-element-in-an-array/description/",
