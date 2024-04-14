@@ -1,6 +1,6 @@
 const Greedy = {
     "topicID" : 14,
-    "topic" : "Greedy Algorithms & Hashing",
+    "topic" : "Greedy Algorithms",
     "totalQues": 16,
     "totalEasy" : 1,
     "totalMedium": 12,
