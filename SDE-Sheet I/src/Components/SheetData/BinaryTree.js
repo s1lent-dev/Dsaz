@@ -8,7 +8,7 @@ const Binarytree = {
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
-            "problemId" : 227,
+            "problemId" : 228,
             "title": "Binary Tree Preorder Traversal",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/preorder-traversal-of-binary-tree/",
@@ -16,7 +16,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/preorder-traversal/1"
         },
         {
-            "problemId" : 228,
+            "problemId" : 229,
             "title": "Binary Tree Inorder Traversal",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/inorder-traversal-of-binary-tree/",
@@ -24,7 +24,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/inorder-traversal/1"
         },
         {
-            "problemId" : 229,
+            "problemId" : 230,
             "title": "Binary Tree Postorder Traversal",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/post-order-traversal-of-binary-tree/",
@@ -32,7 +32,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/postorder-traversal/1"
         },
         {
-            "problemId" : 230,
+            "problemId" : 231,
             "title": "Binary Tree Level Order Traversal",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/level-order-traversal-of-a-binary-tree/",
@@ -40,7 +40,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/level-order-traversal/1"
         },
         {
-            "problemId" : 231,
+            "problemId" : 232,
             "title": "Maximum Depth of Binary Tree",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/maximum-depth-of-a-binary-tree/",
@@ -48,7 +48,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-depth-of-binary-tree/1"
         },
         {
-            "problemId" : 232,
+            "problemId" : 233,
             "title": "Balanced Binary Tree",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/check-if-the-binary-tree-is-balanced-binary-tree/",
@@ -56,7 +56,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1"
         },
         {
-            "problemId" : 233,
+            "problemId" : 234,
             "title": "Diameter of Binary Tree",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/calculate-the-diameter-of-a-binary-tree/",
@@ -64,7 +64,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1"
         },
         {
-            "problemId" : 234,
+            "problemId" : 235,
             "title": "Same Tree",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/check-if-two-trees-are-identical/",
@@ -72,7 +72,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1"
         },
         {
-            "problemId" : 235,
+            "problemId" : 236,
             "title": "Sum Root to Leaf Numbers",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/",
@@ -80,7 +80,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths-sum/1"
         },
         {
-            "problemId" : 236,
+            "problemId" : 237,
             "title": "Binary Tree Zigzag Level Order Traversal",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/zig-zag-traversal-of-binary-tree/",
@@ -88,7 +88,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/zigzag-tree-traversal/1"
         },
         {
-            "problemId" : 237,
+            "problemId" : 238,
             "title": "Boundary Traversal of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/boundary-traversal-of-a-binary-tree/",
@@ -96,7 +96,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1"
         },
         {
-            "problemId" : 238,
+            "problemId" : 239,
             "title": "Vertical Order Traversal of a Binary Tree",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/vertical-order-traversal-of-binary-tree/",
@@ -104,7 +104,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1"
         },
         {
-            "problemId" : 239,
+            "problemId" : 240,
             "title": "Binary Tree Maximum Path Sum",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/maximum-sum-path-in-binary-tree/",
@@ -112,7 +112,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1"
         },
         {
-            "problemId" : 240,
+            "problemId" : 241,
             "title": "Top View of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/top-view-of-a-binary-tree/",
@@ -120,7 +120,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1"
         },
         {
-            "problemId" : 241,
+            "problemId" : 242,
             "title": "Bottom View of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/bottom-view-of-a-binary-tree/",
@@ -128,7 +128,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1"
         },
         {
-            "problemId" : 242,
+            "problemId" : 243,
             "title": "Right View of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/right-left-view-of-binary-tree/",
@@ -136,7 +136,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/right-view-of-binary-tree/1"
         },
         {
-            "problemId" : 243,
+            "problemId" : 244,
             "title": "Left View of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/right-left-view-of-binary-tree/",
@@ -144,7 +144,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1"
         },
         {
-            "problemId" : 244,
+            "problemId" : 245,
             "title": "Symmetric Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/check-for-symmetrical-binary-tree/",
@@ -152,7 +152,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/symmetric-tree/1"
         },
         {
-            "problemId" : 245,
+            "problemId" : 246,
             "title": "Root to Leaf Paths",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/print-root-to-node-path-in-a-binary-tree/",
@@ -160,7 +160,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1"
         },
         {
-            "problemId" : 246,
+            "problemId" : 247,
             "title": "Lowest Common Ancestor of a Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/lowest-common-ancestor-for-two-given-nodes/",
@@ -168,7 +168,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1"
         },
         {
-            "problemId" : 247,
+            "problemId" : 248,
             "title": "Maximum Width of Binary Tree",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/maximum-width-of-a-binary-tree/",
@@ -176,7 +176,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-width-of-tree/1"
         },
         {
-            "problemId" : 248,
+            "problemId" : 249,
             "title": "Check for Children Sum Property",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/check-for-children-sum-property-in-a-binary-tree/",
@@ -184,7 +184,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/children-sum-parent/1"
         },
         {
-            "problemId" : 249,
+            "problemId" : 250,
             "title": "All Nodes Distance K in Binary Tree",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/",
@@ -192,7 +192,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1"
         },
         {
-            "problemId" : 250,
+            "problemId" : 251,
             "title": "Burning Tree",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/burn-the-binary-tree-starting-from-the-target-node/",
@@ -200,7 +200,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/burning-tree/1"
         },
         {
-            "problemId" : 251,
+            "problemId" : 252,
             "title": "Count Complete Tree Nodes",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/binary-tree/count-number-of-nodes-in-a-binary-tree/",
@@ -208,7 +208,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1"
         },
         {
-            "problemId" : 252,
+            "problemId" : 253,
             "title": "Construct Binary Tree from Preorder and Inorder Traversal",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/construct-a-binary-tree-from-inorder-and-preorder-traversal/",
@@ -216,7 +216,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/construct-tree-1/1"
         },
         {
-            "problemId" : 253,
+            "problemId" : 254,
             "title": "Construct Binary Tree from Inorder and Postorder Traversal",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/construct-binary-tree-from-inorder-and-postorder-traversal/",
@@ -224,15 +224,15 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1"
         },
         {
-            "problemId" : 254,
-            "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+            "problemId" : 255,
+            "title": "Construct Binary Tree from Preorder and Postorder Traversal",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/",
             "leetcode": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/description/",
             "gfg": ""
         },
         {
-            "problemId" : 255,
+            "problemId" : 256,
             "title": "Serialize and Deserialize Binary Tree",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/serialize-and-deserialize-a-binary-tree/",
@@ -240,7 +240,7 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1"
         },
         {
-            "problemId" : 256,
+            "problemId" : 257,
             "title": "Flatten Binary Tree to Linked List",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/flatten-binary-tree-to-linked-list/",

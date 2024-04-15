@@ -21,6 +21,6 @@ Server.use("/api/users", UserRoute);
 Server.use("/api/sheets", SheetRoute);
 Server.use("/api/testing", TestRoute);
 
-Server.listen(3000, () => {
+Server.listen(process.env.PORT, () => {
   console.log(`Server started on port ${process.env.PORT}`);
 });

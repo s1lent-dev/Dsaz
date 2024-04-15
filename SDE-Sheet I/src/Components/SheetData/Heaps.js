@@ -8,7 +8,7 @@ const Heaps = {
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
-            "problemId" : 273,
+            "problemId" : 274,
             "title": "Does array represent Heap",
             "difficulty": "Easy",
             "article": "https://www.geeksforgeeks.org/how-to-check-if-a-given-array-represents-a-binary-heap/",
@@ -16,7 +16,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/does-array-represent-heap4345/1"
         },
         {
-            "problemId" : 274,
+            "problemId" : 275,
             "title": "Convert Min Heap to Max Heap",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/convert-min-heap-to-max-heap/",
@@ -24,7 +24,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/convert-min-heap-to-max-heap-1666385109/1"
         },
         {
-            "problemId" : 275,
+            "problemId" : 276,
             "title": "Kth Largest Element in an Array",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/kth-largest-smallest-element-in-an-array/",
@@ -32,7 +32,7 @@ const Heaps = {
             "gfg": ""
         },
         {
-            "problemId" : 276,
+            "problemId" : 277,
             "title": "Kth Smallest Element in an Array",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/kth-largest-smallest-element-in-an-array/",
@@ -40,7 +40,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1"
         },
         {
-            "problemId" : 277,
+            "problemId" : 278,
             "title": "Sort K Sorted Array",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/nearly-sorted-algorithm/",
@@ -48,7 +48,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1"
         },
         {
-            "problemId" : 278,
+            "problemId" : 279,
             "title": "Replace Elements by its Rank in the Array",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/replace-elements-by-its-rank-in-the-array/",
@@ -56,7 +56,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/replace-elements-by-its-rank-in-the-array/1"
         },
         {
-            "problemId" : 279,
+            "problemId" : 280,
             "title": "Task Scheduler",
             "difficulty": "Medium",
             "article": "https://leetcode.com/problems/task-scheduler/editorial/",
@@ -64,7 +64,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/task-scheduler/1"
         },
         {
-            "problemId" : 280,
+            "problemId" : 281,
             "title": "Hand of Straights",
             "difficulty": "Medium",
             "article": "https://www.tutorialspoint.com/hand-of-straights-in-cplusplus",
@@ -72,7 +72,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/hands-of-straights/1"
         },
         {
-            "problemId" : 281,
+            "problemId" : 282,
             "title": "Design Twitter",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/design-custom-twitter-based-on-given-operations/",
@@ -80,7 +80,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/design-twitter/1"
         },
         {
-            "problemId" : 282,
+            "problemId" : 283,
             "title": "Minimum Cost of ropes",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/",
@@ -88,7 +88,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1"
         },
         {
-            "problemId" : 283,
+            "problemId" : 284,
             "title": "Kth Largest Element in a Stream",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/kth-largest-element-in-a-stream/",
@@ -96,7 +96,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/kth-largest-element-in-a-stream2220/1"
         },
         {
-            "problemId" : 284,
+            "problemId" : 285,
             "title": "Maximum Sum Combination",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/",
@@ -104,7 +104,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-sum-combination/1"
         },
         {
-            "problemId" : 285,
+            "problemId" : 286,
             "title": "Merge k Sorted Lists",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/",
@@ -112,7 +112,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1"
         },
         {
-            "problemId" : 286,
+            "problemId" : 287,
             "title": "Top K Frequent Elements",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/",
@@ -120,7 +120,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/top-k-frequent-elements-in-array/1"
         },
         {
-            "problemId" : 287,
+            "problemId" : 288,
             "title": "Find Median from Data Stream",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/",
@@ -128,7 +128,7 @@ const Heaps = {
             "gfg": "https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1"
         },
         {
-            "problemId" : 288,
+            "problemId" : 289,
             "title": "Strong Password Checker",
             "difficulty": "Hard",
             "article": "https://algo.monster/liteproblems/420",

@@ -8,7 +8,7 @@ const Trie = {
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
-            "problemId" : 400,
+            "problemId" : 422,
             "title": "Implement Trie I (Prefix Tree)",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/implement-trie-ii/",
@@ -16,7 +16,7 @@ const Trie = {
             "gfg": "https://www.geeksforgeeks.org/problems/trie-insert-and-search0651/1"
         },
         {
-            "problemId" : 401,
+            "problemId" : 423,
             "title": "Implement Trie II (Prefix Tree)",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/implement-trie-ii/",
@@ -24,7 +24,7 @@ const Trie = {
             "gfg": "https://www.naukri.com/code360/problems/implement-trie_1387095"
         },
         {
-            "problemId" : 402,
+            "problemId" : 424,
             "title": "Longest String with All Prefixes",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/longest-valid-word-with-all-prefixes/",
@@ -32,7 +32,7 @@ const Trie = {
             "gfg": "https://www.naukri.com/code360/problems/complete-string_2687860"
         },
         {
-            "problemId" : 403,
+            "problemId" : 425,
             "title": "Number of Distinct Substrings in a String",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/number-of-distinct-substrings-in-a-string-using-trie/",
@@ -40,7 +40,7 @@ const Trie = {
             "gfg": "https://www.naukri.com/code360/problems/count-distinct-substrings_985292"
         },
         {
-            "problemId" : 404,
+            "problemId" : 426,
             "title": "Maximum XOR of Two Numbers in an Array",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/maximum-xor-of-two-numbers-in-an-array/",
@@ -48,7 +48,7 @@ const Trie = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-xor-of-two-numbers-in-an-array/1"
         },
         {
-            "problemId" : 405,
+            "problemId" : 427,
             "title": "Maximum XOR With an Element From Array",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/trie/maximum-xor-queries-trie/",
@@ -56,7 +56,7 @@ const Trie = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-xor-with-an-element-from-array/1"
         },
         {
-            "problemId" : 406,
+            "problemId" : 428,
             "title": "Word Search II",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/word-search-ii/",

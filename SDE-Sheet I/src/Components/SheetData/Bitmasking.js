@@ -1,14 +1,14 @@
 const Bitmasking = {
     "topicID" : 17,
     "topic" : "Hashing & Bitmasking",
-    "totalQues": 7,
-    "totalEasy" : 0,
-    "totalMedium": 3,
-    "totalHard" : 4,
+    "totalQues": 12,
+    "totalEasy" : 2,
+    "totalMedium": 5,
+    "totalHard" : 5,
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
-            "problemId" : 388,
+            "problemId" : 410,
             "title": "Isomorphic Strings",
             "difficulty": "Easy",
             "article": "https://www.geeksforgeeks.org/check-if-two-given-strings-are-isomorphic-to-each-other/",
@@ -16,7 +16,7 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/isomorphic-strings-1587115620/1"
         },
         {
-            "problemId" : 389,
+            "problemId" : 411,
             "title": "Word Pattern",
             "difficulty": "Easy",
             "article": "https://www.geeksforgeeks.org/check-if-words-in-given-sentence-occur-based-on-the-given-pattern/",
@@ -24,7 +24,7 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/match-specific-pattern/1"
         },
         {
-            "problemId" : 390,
+            "problemId" : 412,
             "title": "Bulls and Cows",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/python-cows-and-bulls-game/",
@@ -32,7 +32,7 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 391,
+            "problemId" : 413,
             "title": "Fraction to Recurring Decimal",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/find-recurring-sequence-fraction/",
@@ -40,7 +40,7 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/a-simple-fraction0921/1"
         },
         {
-            "problemId" : 392,
+            "problemId" : 414,
             "title": "Repeated DNA Sequences",
             "difficulty": "Medium",
             "article": "https://www.tutorialspoint.com/repeated-dna-sequences-in-cplusplus",
@@ -48,7 +48,7 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 393,
+            "problemId" : 415,
             "title": "Bus Routes",
             "difficulty": "Hard",
             "article": "https://www.tutorialspoint.com/bus-routes-in-cplusplus",
@@ -56,7 +56,7 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 394,
+            "problemId" : 416,
             "title": "Word Ladder",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/word-ladder-length-of-shortest-chain-to-reach-a-target-word/",
@@ -64,7 +64,7 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/word-ladder/0"
         },
         {
-            "problemId" : 395,
+            "problemId" : 417,
             "title": "Can I Win",
             "difficulty": "Medium",
             "article": "https://algo.monster/liteproblems/464",
@@ -72,7 +72,7 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 396,
+            "problemId" : 418,
             "title": "Partition to K Equal Sum Subsets",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/partition-set-k-subsets-equal-sum/",
@@ -80,7 +80,7 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1"
         },
         {
-            "problemId" : 397,
+            "problemId" : 419,
             "title": "Minimum XOR Sum of Two Arrays",
             "difficulty": "Hard",
             "article": "https://algo.monster/liteproblems/1879",
@@ -88,7 +88,7 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 398,
+            "problemId" : 420,
             "title": "Maximum AND Sum of Array",
             "difficulty": "Hard",
             "article": "https://github.com/doocs/leetcode/blob/main/solution/2100-2199/2172.Maximum%20AND%20Sum%20of%20Array/README_EN.md",
@@ -96,12 +96,12 @@ const Bitmasking = {
             "gfg": ""
         },
         {
-            "problemId" : 399,
+            "problemId" : 421,
             "title": "Partition Array Into Two Arrays to Minimize Sum Difference",
             "difficulty": "Hard",
             "article": "https://leetcode.ca/2021-10-19-2035-Partition-Array-Into-Two-Arrays-to-Minimize-Sum-Difference/",
             "leetcode": "https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/description/",
-            "gfg": ""
+            "gfg": "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1"
         },
     ],
     "img" : "/Dsaz/Images/arrays.jpg"

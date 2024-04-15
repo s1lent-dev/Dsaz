@@ -1,9 +1,9 @@
 const Arrays = {
     "topicID" : 1,
     "topic" : "Arrays & Matrix",
-    "totalQues": 32,
-    "totalEasy" : 13,
-    "totalMedium": 16,
+    "totalQues": 34,
+    "totalEasy" : 14,
+    "totalMedium": 17,
     "totalHard" : 3,
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
@@ -73,6 +73,22 @@ const Arrays = {
         },
         {
             "problemId" : 9,
+            "title": "Find All Duplicates in an Array",
+            "difficulty": "Medium",
+            "article": "https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/",
+            "leetcode": "https://leetcode.com/problems/find-all-duplicates-in-an-array/description/",
+            "gfg": "https://www.geeksforgeeks.org/problems/find-duplicates-in-an-array/1"
+        },
+        {
+            "problemId" : 10,
+            "title": "Find the Duplicate Number in N+1 Array",
+            "difficulty": "Medium",
+            "article": "https://www.geeksforgeeks.org/find-repetitive-element-1-n-1/",
+            "leetcode": "https://leetcode.com/problems/find-the-duplicate-number/description/",
+            "gfg": ""
+        },
+        {
+            "problemId" : 11,
             "title": "Maximum consecutive 1's in binary array",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/count-maximum-consecutive-ones-in-the-array/",
@@ -80,7 +96,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/longest-consecutive-1s-1587115620/1"
         },
         {
-            "problemId" : 10,
+            "problemId" : 12,
             "title": "Find single number that appears only once",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/arrays/find-the-number-that-appears-once-and-the-other-numbers-twice/",
@@ -88,7 +104,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/element-appearing-once2552/1"
         },
         {
-            "problemId" : 11,
+            "problemId" : 13,
             "title": "Two sum",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/two-sum-check-if-a-pair-with-given-sum-exists-in-array/",
@@ -96,7 +112,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1"
         },
         {
-            "problemId" : 12,
+            "problemId" : 14,
             "title": "Sort an array of 0's, 1's and 2's",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/sort-an-array-of-0s-1s-and-2s/",
@@ -104,7 +120,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1"
         },
         {
-            "problemId" : 13,
+            "problemId" : 15,
             "title": "Majority Element",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/find-the-majority-element-that-occurs-more-than-n-2-times/",
@@ -112,7 +128,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/majority-element-1587115620/1"
         },
         {
-            "problemId" : 14,
+            "problemId" : 16,
             "title": "Kadane's Algorithm - Maximum subarray sum",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/kadanes-algorithm-maximum-subarray-sum-in-an-array/",
@@ -121,7 +137,7 @@ const Arrays = {
         },
         {
 
-            "problemId" : 15,
+            "problemId" : 17,
             "title": "Best time to buy and sell stock",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/stock-buy-and-sell/",
@@ -129,7 +145,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1"
         },
         {
-            "problemId" : 16,
+            "problemId" : 18,
             "title": "Rearrange the array in alternating positive and negative items",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/arrays/rearrange-array-elements-by-sign/",
@@ -137,7 +153,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1"
         },
         {
-            "problemId" : 17,
+            "problemId" : 19,
             "title": "Next Permutation",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/next_permutation-find-next-lexicographically-greater-permutation/",
@@ -145,7 +161,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/next-permutation5226/1"
         },
         {
-            "problemId" : 18,
+            "problemId" : 20,
             "title": "Longest Consecutive Sequence",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/longest-consecutive-sequence-in-an-array/",
@@ -153,7 +169,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1"
         },
         {
-            "problemId" : 19,
+            "problemId" : 21,
             "title": "Pascle's Triangle",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/program-to-generate-pascals-triangle/",
@@ -161,7 +177,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/pascal-triangle0652/1"
         },
         {
-            "problemId" : 20,
+            "problemId" : 22,
             "title": "Majority Element II",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/majority-elementsn-3-times-find-the-elements-that-appears-more-than-n-3-times-in-the-array/",
@@ -169,7 +185,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/majority-vote/1"
         },
         {
-            "problemId" : 21,
+            "problemId" : 23,
             "title": "Maximum Product Subarray",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/maximum-product-subarray-in-an-array/",
@@ -177,7 +193,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-product-subarray3604/1"
         },
         {
-            "problemId" : 22,
+            "problemId" : 24,
             "title": "Largest subarray with 0 sum",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/length-of-the-longest-subarray-with-zero-sum/",
@@ -185,7 +201,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1"
         },
         {
-            "problemId" : 23,
+            "problemId" : 25,
             "title": "Merge two sorted arrays",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/merge-two-sorted-arrays-without-extra-space/",
@@ -193,7 +209,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1"
         },
         {
-            "problemId" : 24,
+            "problemId" : 26,
             "title": "Find reapeating and missing number",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/",
@@ -201,7 +217,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/find-missing-and-repeating2512/1"
         },
         {
-            "problemId" : 25,
+            "problemId" : 27,
             "title": "Three sum",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/3-sum-find-triplets-that-add-up-to-a-zero/",
@@ -209,7 +225,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1"
         },
         {
-            "problemId" : 26,
+            "problemId" : 28,
             "title": "Four sum",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/4-sum-find-quads-that-add-up-to-a-target-value/",
@@ -217,7 +233,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1"
         },
         {
-            "problemId" : 27,
+            "problemId" : 29,
             "title": "Reverse pairs",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/count-reverse-pairs/",
@@ -225,7 +241,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/count-reverse-pairs/1"
         },
         {
-            "problemId" : 28,
+            "problemId" : 30,
             "title": "Count Inversions",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/count-inversions-in-an-array/",
@@ -233,7 +249,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
         },
         {
-            "problemId" : 29,
+            "problemId" : 31,
             "title": "Transpose of Matrix",
             "difficulty": "Easy",
             "article": "https://takeuforward.org/data-structure/transpose-a-matrix-program-01-space/",
@@ -241,7 +257,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1"
         },
         {
-            "problemId" : 30,
+            "problemId" : 32,
             "title": "Spiral Matrix",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/spiral-traversal-of-matrix/",
@@ -249,7 +265,7 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/1"
         },
         {
-            "problemId" : 31,
+            "problemId" : 33,
             "title": "Set Matrix Zeroes",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/set-matrix-zero/",
@@ -257,7 +273,7 @@ const Arrays = {
             "gfg": ""
         },
         {
-            "problemId" : 32,
+            "problemId" : 34,
             "title": "Rotate Matrix by 90 degrees",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/rotate-image-by-90-degree/",

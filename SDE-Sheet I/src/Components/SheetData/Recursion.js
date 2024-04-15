@@ -1,10 +1,10 @@
 const Recursion = {
     "topicID" : 10,
     "topic" : "Recursion & Backtracking",
-    "totalQues": 26,
+    "totalQues": 27,
     "totalEasy" : 0,
     "totalMedium": 17,
-    "totalHard" : 9,
+    "totalHard" : 10,
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
@@ -169,6 +169,14 @@ const Recursion = {
         },
         {
             "problemId" : 221,
+            "title": "The Knight's Tour",
+            "difficulty": "Hard",
+            "article": "https://www.geeksforgeeks.org/the-knights-tour-problem/",
+            "leetcode": "https://leetcode.com/problems/the-knights-tour/description/",
+            "gfg": "https://www.naukri.com/code360/problems/knight-tour_1170518"
+        },
+        {
+            "problemId" : 222,
             "title": "Word Break",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/word-break-problem-using-backtracking/",
@@ -176,7 +184,7 @@ const Recursion = {
             "gfg": "https://www.geeksforgeeks.org/problems/word-break1352/1"
         },
         {
-            "problemId" : 222,
+            "problemId" : 223,
             "title": "M-Coloring Problem",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/m-coloring-problem/",
@@ -184,7 +192,7 @@ const Recursion = {
             "gfg": "https://www.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1"
         },
         {
-            "problemId" : 223,
+            "problemId" : 224,
             "title": "Sudoku Solver",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/sudoku-solver/",
@@ -192,7 +200,7 @@ const Recursion = {
             "gfg": "https://www.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1"
         },
         {
-            "problemId" : 224,
+            "problemId" : 225,
             "title": "Expression Add Operators",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/print-all-possible-expressions-that-evaluate-to-a-target/",
@@ -200,7 +208,7 @@ const Recursion = {
             "gfg": "https://www.geeksforgeeks.org/problems/expression-add-operators/1"
         },
         {
-            "problemId" : 225,
+            "problemId" : 226,
             "title": "Remove Invalid Parentheses",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/remove-invalid-parentheses/",
@@ -208,7 +216,7 @@ const Recursion = {
             "gfg": "https://www.geeksforgeeks.org/problems/remove-invalid-parentheses/1"
         },
         {
-            "problemId" : 226,
+            "problemId" : 227,
             "title": "Word Search II",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/data-structure/word-search-ii/",

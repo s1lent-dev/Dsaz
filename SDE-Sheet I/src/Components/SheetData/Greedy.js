@@ -8,7 +8,7 @@ const Greedy = {
     "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
     "problems" : [
         {
-            "problemId" : 289,
+            "problemId" : 290,
             "title": "Assign Cookies",
             "difficulty": "Easy",
             "article": "https://www.tutorialspoint.com/assign-cookies-in-cplusplus",
@@ -16,7 +16,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/assign-cookies/1"
         },
         {
-            "problemId" : 290,
+            "problemId" : 291,
             "title": "Fractional Knapsack",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/fractional-knapsack-problem-greedy-approach/",
@@ -24,7 +24,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1"
         },
         {
-            "problemId" : 291,
+            "problemId" : 292,
             "title": "Coin Change",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/find-minimum-number-of-coins/",
@@ -32,7 +32,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/number-of-coins1824/1"
         },
         {
-            "problemId" : 292,
+            "problemId" : 293,
             "title": "Lemonade Change",
             "difficulty": "Easy",
             "article": "https://www.geeksforgeeks.org/lemonade-stand-change-challenge/",
@@ -40,7 +40,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/lemonade-change/1"
         },
         {
-            "problemId" : 293,
+            "problemId" : 294,
             "title": "Valid Parenthesis String",
             "difficulty": "Medium",
             "article": "https://leetcode.com/problems/valid-parenthesis-string/editorial/",
@@ -48,7 +48,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/parenthesis-checker2744/1"
         },
         {
-            "problemId" : 294,
+            "problemId" : 295,
             "title": "N meetings in one room",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/n-meetings-in-one-room/",
@@ -56,7 +56,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1"
         },
         {
-            "problemId" : 295,
+            "problemId" : 296,
             "title": "Jump Game",
             "difficulty": "Medium",
             "article": "https://algo.monster/liteproblems/55",
@@ -64,7 +64,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/jump-game/1"
         },
         {
-            "problemId" : 296,
+            "problemId" : 297,
             "title": "Jump Game II",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/",
@@ -72,7 +72,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1"
         },
         {
-            "problemId" : 297,
+            "problemId" : 298,
             "title": "Minimum Platforms",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/minimum-number-of-platforms-required-for-a-railway/",
@@ -80,7 +80,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1"
         },
         {
-            "problemId" : 298,
+            "problemId" : 299,
             "title": "Job Sequencing Problem",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/job-sequencing-problem/",
@@ -88,7 +88,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1"
         },
         {
-            "problemId" : 299,
+            "problemId" : 300,
             "title": "Candy",
             "difficulty": "Hard",
             "article": "https://www.geeksforgeeks.org/minimum-number-of-candies-required-to-distribute-among-children-based-on-given-conditions/",
@@ -96,7 +96,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/candy/1"
         },
         {
-            "problemId" : 300,
+            "problemId" : 301,
             "title": "Shortest Job first",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/program-for-shortest-job-first-or-sjf-cpu-scheduling-set-1-non-preemptive/",
@@ -104,7 +104,7 @@ const Greedy = {
             "gfg": "geeksforgeeks.org/problems/shortest-job-first/1"
         },
         {
-            "problemId" : 301,
+            "problemId" : 302,
             "title": "Page Faults in LRU",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/program-for-least-recently-used-lru-page-replacement-algorithm/",
@@ -112,7 +112,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/page-faults-in-lru5603/1"
         },
         {
-            "problemId" : 302,
+            "problemId" : 303,
             "title": "Merge Intervals",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/data-structure/merge-overlapping-sub-intervals/",
@@ -120,7 +120,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/overlapping-intervals--170633/1"
         },
         {
-            "problemId" : 303,
+            "problemId" : 304,
             "title": "Insert Interval",
             "difficulty": "Medium",
             "article": "https://takeuforward.org/?s=Insert+Interval",
@@ -128,7 +128,7 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/insert-interval-1666733333/1"
         },
         {
-            "problemId" : 304,
+            "problemId" : 305,
             "title": "Non Overlapping Intervals",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/find-non-overlapping-intervals-among-a-given-set-of-intervals/",
