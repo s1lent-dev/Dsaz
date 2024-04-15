@@ -160,7 +160,7 @@ router.put("/testUpdate/:topicId/:problemId", async (req, res) => {
     }
     const newUser = await user.save();
     const newSheet = newUser.sheetData.find((data) => data.topic.topicId === parseInt(req.params.topicId)); 
-    res.status(200).json(newUser);
+    res.status(200).json(newSheet);
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Server Error");
