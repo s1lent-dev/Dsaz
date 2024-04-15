@@ -16,6 +16,9 @@ Mongoose.connect(process.env.MONGO_URL)
 
 Server.use(cors());
 Server.use(express.json());
+Server.use("/" , (req, res) => {
+  res.send("Welcome to the API");
+});
 Server.use("/api/auth", AuthRoute);
 Server.use("/api/users", UserRoute);
 Server.use("/api/sheets", SheetRoute);
