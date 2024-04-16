@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import Topics from "./Topics";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import { useFetch } from "../../context/ApiCalls";
-import { setSheetData } from "../../context/sheetSlice";
 import Loading from "./Loading";
 
 const Sheet = () => {
-  const dispatch = useDispatch();
+
   const Topic = useSelector((state) => state.Topics.topic);
   const sheetData = useSelector((state) => state.sheet.sheetData);
   const isLogin = useSelector((state) => state.user.isLogin);
@@ -62,7 +61,7 @@ const Sheet = () => {
                 {chunk.map((data) => (
                   <div className="column" key={data._id}>
                     {/* Pass data to Topics component */}
-                    <Topics data={data} islogin={isLogin} />
+                    <Topics data={data} isLogin={isLogin} />
                   </div>
                 ))}
               </div>

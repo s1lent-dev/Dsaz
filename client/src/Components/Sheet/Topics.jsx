@@ -3,14 +3,14 @@ import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import Progressbar from '../Progressbar/Progressbar'
 import PropTypes from "prop-types"
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setIsTopicId } from '../../context/sheetSlice';
-const Topics = ({data, islogin}) => {
+const Topics = ({data, isLogin}) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
-      if(islogin){
+      if(isLogin){
         navigate(`/${data.topicId}`)
         dispatch(setIsTopicId(data.topicId))
         localStorage.setItem('topicId', JSON.stringify(data.topicId))
@@ -35,6 +35,17 @@ const Topics = ({data, islogin}) => {
   )
 }
 
-
+Topics.propTypes = {
+  data: PropTypes.shape({
+    topicId: PropTypes.string.isRequired,
+    topic: PropTypes.string.isRequired,
+    totalEasy: PropTypes.number.isRequired,
+    totalMedium: PropTypes.number.isRequired,
+    totalHard: PropTypes.number.isRequired,
+    solved: PropTypes.number.isRequired,
+    totalQues: PropTypes.number.isRequired,
+  }).isRequired,
+  isLogin: PropTypes.bool.isRequired,
+};
 
 export default Topics

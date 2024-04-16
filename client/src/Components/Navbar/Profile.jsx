@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./styles.scss";
 import img from "../../assets/PFP 1.jpg";
 import CircularProgressBar from "../Progressbar/Progressbar";
@@ -8,11 +8,11 @@ import DonutSmallIcon from "@mui/icons-material/DonutSmall";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsLogin, logoutUser } from "../../context/userSlice"; // Import the action
+import { logoutUser } from "../../context/userSlice"; // Import the action
 
 const Profile = () => {
+
   const dispatch = useDispatch(); // Get dispatch function
-  const isLogin = useSelector((state) => state.user.isLogin); // Get isLogin state
   const sheetData = useSelector((state) => state.sheet.sheetData);
   const userData = useSelector((state) => state.user.userData);
   const [profileState, setProfileState] = useState({ questions: 0, solved: 0, easy: 0, medium: 0, hard: 0, totalEasy: 0, totalMedium: 0, totalHard: 0 });

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 import { useSelector } from 'react-redux';
 import { useUpdateNotes } from '../../context/ApiCalls';
@@ -49,6 +50,15 @@ const Notes = ({ setIsNotesOpen, problem, topicId }) => {
       </div>
     </div>
   );
+};
+
+Notes.propTypes = {
+  setIsNotesOpen: PropTypes.func.isRequired,
+  problem: PropTypes.shape({
+    problemId: PropTypes.number.isRequired,
+    notes: PropTypes.string.isRequired,
+  }).isRequired,
+  topicId: PropTypes.string.isRequired,
 };
 
 export default Notes;

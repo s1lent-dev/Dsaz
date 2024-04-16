@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.scss";
 import Progressbar from "../Progressbar/Progressbar";
 import BackdropImage from "../../assets/Backdrop.jpg";
@@ -12,6 +12,7 @@ import SingleQuestion from "./SingleQuestion";
 import { useFetchSingleSheet } from "../../context/ApiCalls"; // Assuming the correct context is imported
 import { setIsHomepage } from "../../context/TopicSlice";
 import Notes from "./Notes";
+
 const Questions = () => {
   
   const { id } = useParams();
@@ -19,11 +20,7 @@ const Questions = () => {
   const [filteredData, setFilteredData] = useState({});
   const Topic = useSelector((state) => state.Topics.topic);
   const singleSheetData = useSelector((state) => state.singleSheet.sheetData);
-  const sheetData = useSelector((state) => state.sheet.sheetData);
   const userData = useSelector((state) => state.user.userData);
-  const isLogin = useSelector((state) => state.user.isLogin);
-  const loading = useSelector((state) => state.singleSheet.isLoading);
-  const error = useSelector((state) => state.singleSheet.isError);
   const[isNotesOpen, setIsNotesOpen] = useState(false);
   const[problem, setProblem] = useState("");
   const AuthToken = userData.accessToken;

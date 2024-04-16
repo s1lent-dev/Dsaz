@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { useFetchAllTopics } from '../../context/ApiCalls'
 
 const Loading = () => {
+  
   const topicsData = useSelector((state) => state.Topics.topicsData);
   const { fetchData } = useFetchAllTopics();
   useEffect(() => {
