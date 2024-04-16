@@ -8,7 +8,7 @@ const Loading = () => {
   const topicsData = useSelector((state) => state.Topics.topicsData);
   const { fetchData } = useFetchAllTopics();
   useEffect(() => {
-    fetchData('http://localhost:3000/api/sheets/getSheets');
+    fetchData('https://dsaz-server.vercel.app/api/sheets/getSheets');
   }, []);
 
   return (

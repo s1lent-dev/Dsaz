@@ -32,7 +32,7 @@ const Questions = () => {
   useEffect(() => {
     const fetchDataAsync = async () => {
       await fetchData(
-        `http://localhost:3000/api/sheets/get/${id}`,
+        `https://dsaz-server.vercel.app/api/sheets/get/${id}`,
         AuthToken,
         userData.email
       );

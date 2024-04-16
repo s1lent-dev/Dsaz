@@ -23,7 +23,7 @@ const SingleQuestion = ({ topicId, problem, index, background, setIsNotesOpen, s
     const body = { status: newStatus, difficulty: difficulty };
     if (isLogin) {
       await updateStatus(
-        `http://localhost:3000/api/sheets/update/${topicId}/${problemId}`,
+        `https://dsaz-server.vercel.app/api/sheets/update/${topicId}/${problemId}`,
         AuthToken,
         body,
         userData.email

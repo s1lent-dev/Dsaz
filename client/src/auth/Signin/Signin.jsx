@@ -30,7 +30,7 @@ const Signin = () => {
 
   const handleLogin = async (values, { setSubmitting }) => {
     try {
-      const res = await login("http://localhost:3000/api/auth/login", values);
+      const res = await login("https://dsaz-server.vercel.app/api/auth/login", values);
       if (res) {
         dispatch(setIsLogin(true)); // Dispatch action to set isLogin to true
       }

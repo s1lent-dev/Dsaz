@@ -12,7 +12,7 @@ const Notes = ({ setIsNotesOpen, problem, topicId }) => {
   const handleNotesChange = async () => {
     const body = { notes: selectedNotes };
     await updateNotes(
-      `http://localhost:3000/api/sheets/updateNotes/${topicId}/${problem.problemId}`,
+      `https://dsaz-server.vercel.app/api/sheets/updateNotes/${topicId}/${problem.problemId}`,
       AuthToken,
       body,
       userData.email

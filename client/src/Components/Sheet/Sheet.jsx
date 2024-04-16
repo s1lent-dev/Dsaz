@@ -22,7 +22,7 @@ const Sheet = () => {
   useEffect(() => {
     if (isLogin) {
       fetchData(
-        "http://localhost:3000/api/sheets/getAll",
+        "https://dsaz-server.vercel.app/api/sheets/getAll",
         AuthToken,
         userData.email
       ); // Pass email as a parameter
