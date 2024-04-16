@@ -67,7 +67,7 @@ const Signup = () => {
       // Redirect to error page or show error toast
     } finally {
       setSubmitting(false);
-      navigate("/Dsaz/Signin");
+      navigate("/Signin");
     }
   };
 

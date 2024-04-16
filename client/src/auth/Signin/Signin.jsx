@@ -43,7 +43,7 @@ const Signin = () => {
   
   useEffect(() => {
     if (isLogin) {
-      navigate('/Dsaz/');
+      navigate('/');
     }
   }, [isLogin, navigate]);
 
