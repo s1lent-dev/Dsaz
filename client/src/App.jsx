@@ -16,13 +16,13 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/Dsaz/Signup" element={<Signup />} />
-        <Route path="/Dsaz/Signin" element={<Signin />} />
-        <Route path="/Dsaz/" element={<Home />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/" element={<Home />} />
         {isLogin ? (
-          <Route path="/Dsaz/:id" element={<DsaSheet />} />
+          <Route path="/:id" element={<DsaSheet />} />
         ) : (
-          <Route path="/Dsaz/:id" element={<Navigate to="/Dsaz/" />} />
+          <Route path="/:id" element={<Navigate to="/" />} />
         )}
       </Routes>
       <Footer />

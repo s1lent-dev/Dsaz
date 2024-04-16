@@ -11,7 +11,7 @@ const Topics = ({data, islogin}) => {
     const navigate = useNavigate();
     const handleClick = () => {
       if(islogin){
-        navigate(`/Dsaz/${data.topicId}`)
+        navigate(`/${data.topicId}`)
         dispatch(setIsTopicId(data.topicId))
         localStorage.setItem('topicId', JSON.stringify(data.topicId))
       } else {

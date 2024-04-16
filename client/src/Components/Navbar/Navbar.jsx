@@ -39,11 +39,11 @@ const Navbar = () => {
   }, [scroll]);
 
   const handleLogin = () => {
-    navigate("/Dsaz/Signin");
+    navigate("/Signin");
   }
 
   const handleSignup = () => {
-    navigate("/Dsaz/Signup");
+    navigate("/Signup");
   }
 
   const handleProfileClick = () => {
