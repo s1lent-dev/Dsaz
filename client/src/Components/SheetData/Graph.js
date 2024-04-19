@@ -406,7 +406,7 @@ const Graph = {
             "article": "https://takeuforward.org/graph/strongly-connected-components-kosarajus-algorithm-g-54/",
             "leetcode": "",
             "gfg": "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
-        },
+        }
     ],
     "img" : "/Images/graph.jpg"
 }

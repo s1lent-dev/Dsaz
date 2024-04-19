@@ -30,15 +30,20 @@ const Sheet = () => {
 
   useEffect(() => {
     if (Topic) {
-      const filtered = sheetData.filter((data) =>
-        data.topic.toLowerCase().includes(Topic.toLowerCase())
-      );
+      const filtered = sheetData.filter((data) => {
+        const topicWords = data.topic.toLowerCase().split(' ');
+        const searchWords = Topic.toLowerCase().split(' ');
+  
+        return searchWords.every((word) => topicWords.some((topicWord) => topicWord.includes(word)));
+      });
       setFilteredData(filtered);
     } else {
       setFilteredData(sheetData);
     }
   }, [Topic, sheetData]);
+  
 
+  console.log(filteredData)
   // Chunk the data
   const chunkedData = [];
   for (let i = 0; i < filteredData.length; i += 3) {

@@ -281,5 +281,5 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1"
         }
     ],
-    "img" : "/Images/arrays.jpg"
+    "img" : "/Images/array.jpg"
 }

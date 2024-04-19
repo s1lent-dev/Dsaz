@@ -6,7 +6,7 @@ const Strings = {
     "totalMedium": 9,
     "totalHard" : 4,
     "overview": "We're diving into strings, another essential data type in programming. Strings are sequences of characters, used to represent text. In our DSA cheat sheet, we cover string manipulation techniques like concatenation, substring extraction, and searching algorithms, giving you a thorough understanding of working with strings.",
-    "problmes" : [
+    "problems" : [
         {
             "problemId" : 35,
             "title": "Check if a string is palindrome",

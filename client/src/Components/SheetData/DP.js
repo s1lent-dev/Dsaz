@@ -438,7 +438,7 @@ const DP = {
             "article": "https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/",
             "leetcode": "https://leetcode.com/problems/super-egg-drop/description/",
             "gfg": "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1"
-        },
+        }
     ],
     "img" : "/Images/DP.jpg"
 }
