@@ -47,6 +47,8 @@ export default useFetch;
 
 const useFetchSingleSheet = () => {
     const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
         const fetchData = async (url, token, email) => {
             try {
                 const res = await axios.get(url, { headers: {token : `Bearer ${token}`}, params: { email } });
@@ -56,14 +58,17 @@ const useFetchSingleSheet = () => {
                 localStorage.setItem("singleSheetData", JSON.stringify(data));
                 localStorage.setItem("isLoading", false);
                 localStorage.setItem("isError", false);
+                setLoading(false);
             } catch (error) {
                 dispatch(setisError(true));
                 dispatch(setisLoading(false));
                 console.log(error);
+                setError(error);
+                setLoading(false);
             }
         };
 
-    return { fetchData };
+    return { fetchData, loading, error };
 };
 
 

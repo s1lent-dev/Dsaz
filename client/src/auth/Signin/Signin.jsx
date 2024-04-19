@@ -117,7 +117,7 @@ const Signin = () => {
                   <div className="line" />
                   <div className="already">
                     <p>
-                      Don't have an account? <a href="/Dsaz/Signup">Sign Up</a>
+                      Don't have an account? <a href="/Signup">Sign Up</a>
                     </p>
                   </div>
                   {error && <div className="error">Invalid Email or Password !</div>}
