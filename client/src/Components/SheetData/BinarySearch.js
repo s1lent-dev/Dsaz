@@ -1,11 +1,11 @@
 const binarySearch = {
-    "topicID" : 5,
+    "topicId" : 5,
     "topic" : "Binary Search",
     "totalQues": 29,
     "totalEasy" : 7,
     "totalMedium": 12,
     "totalHard" : 10,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're delving into binary search, a fundamental algorithm for efficient data retrieval. By dividing the search interval in half, binary search quickly narrows down the location of a target value. In our DSA cheat sheet, we're going to look at unique problems based on binary search, providing insights into its practical applications and challenges.",
     "problems" : [
         {
             "problemId" : 81,
@@ -177,7 +177,7 @@ const binarySearch = {
         },
         {
             "problemId" : 102,
-            "title": "The Painter's Partition Problem",
+            "title": "Minimize maximum distance between gas stations",
             "difficulty": "Hard",
             "article": "https://takeuforward.org/arrays/minimise-maximum-distance-between-gas-stations/",
             "leetcode": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/description/",
@@ -240,5 +240,5 @@ const binarySearch = {
             "gfg": "https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/binarySearch.jpg"
 }

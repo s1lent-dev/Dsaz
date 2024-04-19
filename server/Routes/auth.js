@@ -3,6 +3,7 @@ const User = require('../Models/User');
 const Sheet = require('../Models/Sheet');
 const CryptoJS = require("crypto-js");
 const jwt = require('jsonwebtoken');
+const verify = require('../verifyToken');
 
 // Register
 
@@ -34,25 +35,32 @@ router.post("/login", async (req, res) => {
       if (!user) {
         return res.status(401).json("Wrong Credentials");
       }
-  
       const bytes = CryptoJS.AES.decrypt(user.password, process.env.PASS_SECRET);
       const OriginalPassword = bytes.toString(CryptoJS.enc.Utf8);
-  
       if (OriginalPassword !== req.body.password) {
         return res.status(401).json("Wrong Credentials");
       }
-  
       const accessToken = jwt.sign(
         { id: user._id, isAdmin: user.isAdmin },
         process.env.PASS_SECRET,
         { expiresIn: "5d" }
       );
       const { password, ...others } = user._doc;
-  
       res.status(200).json({ ...others, accessToken });
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+  router.put("/updateProfile", verify, async (req, res) => {
+    try {
+      const user = await User.findById(req.user.id);
+      user.profilepic = req.body.profilepic;
+      const updatedUser = await user.save();
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      res.status(500).send("Server Error");
+    }
+  })
 
 module.exports = router;

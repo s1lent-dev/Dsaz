@@ -1,11 +1,11 @@
 const Strings = {
-    "topicID" : 2,
+    "topicId" : 2,
     "topic" : "Strings",
     "totalQues": 22,
     "totalEasy" : 9,
     "totalMedium": 9,
     "totalHard" : 4,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into strings, another essential data type in programming. Strings are sequences of characters, used to represent text. In our DSA cheat sheet, we cover string manipulation techniques like concatenation, substring extraction, and searching algorithms, giving you a thorough understanding of working with strings.",
     "problmes" : [
         {
             "problemId" : 35,
@@ -184,5 +184,5 @@ const Strings = {
             "gfg": "https://www.geeksforgeeks.org/problems/form-a-palindrome1455/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/strings.jpg"
 }

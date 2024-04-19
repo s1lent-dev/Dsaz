@@ -1,11 +1,11 @@
 const twoPointers = {
-    "topicID" : 6,
+    "topicId" : 6,
     "topic" : "Two Poniters & Sliding Window",
     "totalQues": 16,
     "totalEasy" : 1,
     "totalMedium": 10,
     "totalHard" : 5,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're exploring two pointers and sliding window techniques, powerful strategies for array and string manipulations. Two pointers optimize solutions by moving through arrays or strings from both ends simultaneously. Sliding window, on the other hand, efficiently handles subarray or substring problems by maintaining a dynamic window of elements. In our DSA cheat sheet, we delve into these techniques, showcasing their application in solving various coding challenges effectively.",
     "problems" : [
         {
             "problemId" : 110,
@@ -54,7 +54,7 @@ const twoPointers = {
             "article": "https://takeuforward.org/data-structure/remove-duplicates-in-place-from-sorted-array/",
             "leetcode": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/",
             "gfg": "https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1"
-        }
+        },
         {
             "problemId" : 116,
             "title": "Container with Most Water",
@@ -136,5 +136,5 @@ const twoPointers = {
             "gfg": "https://www.geeksforgeeks.org/problems/maximum-of-all-subarrays-of-size-k3101/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/Lc-3.png"
 }

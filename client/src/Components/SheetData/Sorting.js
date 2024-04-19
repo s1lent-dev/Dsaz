@@ -1,11 +1,11 @@
 const Sorting = {
-    "topicID" : 4,
+    "topicId" : 4,
     "topic" : "Searching & Sorting",
     "totalQues": 9,
     "totalEasy" : 5,
     "totalMedium": 4,
     "totalHard" : 0,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're delving into sorting and searching algorithms, crucial techniques in data manipulation and retrieval. Sorting arranges data in a specific order, while searching finds specific elements within that data. In our DSA cheat sheet, we explore popular sorting algorithms like quicksort and mergesort, along with search algorithms like binary search, providing a solid foundation in these fundamental operations.",
     "problems": [
         {
             "problemId" : 72,
@@ -80,5 +80,5 @@ const Sorting = {
             "gfg": "https://www.geeksforgeeks.org/problems/heap-sort/1"
         },
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/sorting.jpg"
 }

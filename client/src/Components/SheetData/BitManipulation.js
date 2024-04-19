@@ -1,11 +1,11 @@
 const BitManipulation = {
-    "topicID" : 9,
+    "topicId" : 9,
     "topic" : "Bit Manipulation",
     "totalQues": 16,
     "totalEasy" : 8,
     "totalMedium": 8,
     "totalHard" : 0,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're exploring bit manipulation, a key technique for low-level programming. It involves bitwise operations like AND, OR, XOR, and shifting to manipulate binary data efficiently. In our DSA cheat sheet, we cover common techniques and advanced operations like bit masking and counting set bits, offering insights into practical applications.",
     "problems" : [
         {
             "problemId" : 185,
@@ -136,5 +136,5 @@ const BitManipulation = {
             "gfg": "https://www.geeksforgeeks.org/problems/power-of-numbers-1587115620/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/binary.jpg"
 }

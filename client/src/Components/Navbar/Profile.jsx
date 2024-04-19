@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./styles.scss";
-import img from "../../assets/PFP 1.jpg";
+import img from "../../assets/Dsaz logo.svg";
 import CircularProgressBar from "../Progressbar/Progressbar";
 import ProgressBar from "@ramonak/react-progress-bar";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";

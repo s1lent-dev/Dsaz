@@ -5,7 +5,7 @@ import "./styles.scss";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "../../assets/Dsaz logo.svg";
-import pfp from "../../assets/PFP 1.jpg";
+import pfp from "../../assets/Dsaz logo.svg";
 import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useSelector, useDispatch } from "react-redux";
@@ -22,6 +22,7 @@ const Navbar = () => {
   const { show, scroll, profileVisible, searchValue } = navbarState;
   const isLogin = useSelector((state) => state.user.isLogin);
   const isHomepage = useSelector((state) => state.Topics.isHomepage);
+  const user = useSelector((state) => state.user.userData);
   const navigate = useNavigate();
   const profileRef = useRef(null);
   useEffect(() => {

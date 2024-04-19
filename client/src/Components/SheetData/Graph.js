@@ -1,11 +1,11 @@
 const Graph = {
-    "topicID" : 15,
+    "topicId" : 15,
     "topic" : "Graph",
     "totalQues": 50,
     "totalEasy" : 2,
     "totalMedium": 20,
     "totalHard" : 28,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into graphs, versatile data structures consisting of nodes and edges that represent relationships between pairs of entities. Key graph traversal techniques include DFS (Depth-First Search) and BFS (Breadth-First Search), which explore and navigate graphs efficiently. In our DSA cheat sheet, we've covered most frequently asked questions about graph theory, including traversal methods, graph representations, and common algorithms, offering a concise understanding in a few lines.",
     "problems" : [
         {
             "problemId" : 306,
@@ -408,5 +408,5 @@ const Graph = {
             "gfg": "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
         },
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/graph.jpg"
 }

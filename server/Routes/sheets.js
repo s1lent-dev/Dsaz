@@ -42,10 +42,7 @@ router.get("/getSheets", async (req, res) => {
 // Get
 router.get("/get/:topicId", verify, async (req, res) => {
   try {
-    const user = await User.findOne({
-      email: req.query.email,
-      "sheetData.topicId": req.params.topicId,
-    });
+    const user = await User.findById(req.user.id);
     if (!user) {
       return res.status(404).json({ message: "Sheet not found for the given topic" });
     }
@@ -64,7 +61,7 @@ router.get("/get/:topicId", verify, async (req, res) => {
 // Get All
 router.get("/getAll", verify, async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.query.email }); // Use req.query instead of req.body for GET requests
+    const user = await User.findById(req.user.id); // Use req.query instead of req.body for GET requests
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -79,10 +76,7 @@ router.get("/getAll", verify, async (req, res) => {
 // Update
 router.put("/update/:topicId/:problemId", verify,  async (req, res) => {
   try {
-    const user = await User.findOne({
-      email: req.query.email,
-      "sheetData.topicId": req.params.topicId,
-    });
+    const user = await User.findById(req.user.id);
     if (!user) {
       return res
         .status(404)
@@ -138,10 +132,7 @@ router.put("/update/:topicId/:problemId", verify,  async (req, res) => {
 
 router.put("/updateNotes/:topicId/:problemId", verify, async (req, res) => {
   try{
-    const user = await User.findOne({
-      email: req.query.email,
-      "sheetData.topicId": req.params.topicId,
-    });
+    const user = await User.findById(req.user.id);
     if (!user) {
       return res
         .status(404)

@@ -1,11 +1,11 @@
 const Heaps = {
-    "topicID" : 13,
+    "topicId" : 13,
     "topic" : "Heaps & Priority Queues",
     "totalQues": 16,
     "totalEasy" : 1,
     "totalMedium": 12,
     "totalHard" : 3,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into heaps and priority queues, essential data structures for managing priority-based elements efficiently. Heaps are specialized binary trees that satisfy the heap property, allowing for quick retrieval of the maximum (max heap) or minimum (min heap) element. In our DSA cheat sheet, we've covered most frequently asked questions about heaps and priority queues.",
     "problems" : [
         {
             "problemId" : 274,
@@ -136,5 +136,5 @@ const Heaps = {
             "gfg": ""
         },
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/queue.jpg"
 }

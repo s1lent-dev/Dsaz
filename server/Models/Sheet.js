@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const ProblemSchema = new mongoose.Schema({
-    problemId: { type: Number, required: true },
+    problemId: { type: Number, required: true},
     title: { type: String, required: true },
     status: { type: String, default: "pending" },
     isSolvable: { type: Boolean, default: true },
@@ -13,7 +13,7 @@ const ProblemSchema = new mongoose.Schema({
 });
 
 const SheetSchema = new mongoose.Schema({
-  topicId: { type: Number, required: true },
+  topicId: { type: Number, required: true},
   topic: { type: String, required: true },
   solved: { type: Number, default: 0 },
   solvedEasy: { type: Number, default: 0 },

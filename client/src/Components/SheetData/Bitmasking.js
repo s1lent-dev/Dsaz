@@ -1,11 +1,11 @@
 const Bitmasking = {
-    "topicID" : 17,
+    "topicId" : 17,
     "topic" : "Hashing & Bitmasking",
     "totalQues": 12,
     "totalEasy" : 2,
     "totalMedium": 5,
     "totalHard" : 5,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into bitmasking and hashing, pivotal techniques for efficient data operations. Bitmasking manipulates individual bits for compact data representation, while hashing offers quick data lookup by converting input to fixed-size values. In our DSA cheat sheet, we've covered most frequently asked questions about these methods. Here, you'll find detailed explanations, practical applications, and coding examples, providing a comprehensive understanding in a few lines.",
     "problems" : [
         {
             "problemId" : 410,
@@ -104,5 +104,5 @@ const Bitmasking = {
             "gfg": "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1"
         },
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/bitmasking.jpg"
 }

@@ -1,11 +1,11 @@
 const DP = {
-    "topicID" : 16,
+    "topicId" : 16,
     "topic" : "Dynamic Programming",
     "totalQues": 54,
     "totalEasy" : 0,
     "totalMedium": 16,
     "totalHard" : 38,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into dynamic programming, an optimization technique used to solve problems by breaking them down into simpler subproblems. Dynamic programming efficiently stores and reuses intermediate results to avoid redundant computations. In our DSA cheat sheet, we've covered most frequently asked questions about dynamic programming. Here, you'll find explanations of key concepts, examples of dynamic programming problems, and strategies for optimization, providing a concise overview in a few lines.",
     "problems" : [
         {
             "problemId" : 356,
@@ -440,5 +440,5 @@ const DP = {
             "gfg": "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1"
         },
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/DP.jpg"
 }

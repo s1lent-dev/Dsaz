@@ -5,7 +5,7 @@ const Arrays = {
     "totalEasy" : 14,
     "totalMedium": 17,
     "totalHard" : 3,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're exploring arrays and matrices, key data structures in programming. Arrays hold collections in a single memory block, while matrices extend to two dimensions, representing grids of data. In our interview questions, we cover array operations and matrix calculations like addition and multiplication, providing a solid understanding of these concepts.",
     "problems" : [
         {
             "problemId" : 1,
@@ -281,5 +281,5 @@ const Arrays = {
             "gfg": "https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/arrays.jpg"
 }

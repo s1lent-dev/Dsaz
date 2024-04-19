@@ -72,12 +72,9 @@ router.post("/testCreate", async (req, res) => {
 
 // GET - Get test sheet by topicId
 // GET - Get test sheet by topicId
-router.get("/testGet/:topicId", async (req, res) => {
+router.get("/testGet/:topicId", verify, async (req, res) => {
   try {
-    const user = await TestUser.findOne({
-    email: req.query.email,
-    "sheetData.topic.topicId": req.params.topicId,
-    });
+    const user = await TestUser.findOne(req.user.id);
     if (!user) {
       return res.status(404).json({ message: "Sheet not found for the given topic" });
     }

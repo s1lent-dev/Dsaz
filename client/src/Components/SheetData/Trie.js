@@ -1,11 +1,11 @@
 const Trie = {
-    "topicID" : 18,
+    "topicId" : 18,
     "topic" : "Trie",
     "totalQues": 7,
     "totalEasy" : 0,
     "totalMedium": 3,
     "totalHard" : 4,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into tries, a tree-like data structure used for efficient retrieval of key-value pairs. Tries are particularly useful for storing and searching strings, making them essential for tasks like autocomplete and spell checking. In our DSA cheat sheet, we've covered most frequently asked questions about tries. Here, you'll find explanations of trie construction, insertion, search operations, and their applications, offering a concise understanding in a few lines.",
     "problems" : [
         {
             "problemId" : 422,
@@ -64,5 +64,5 @@ const Trie = {
             "gfg": ""
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/Trie.png"
 }

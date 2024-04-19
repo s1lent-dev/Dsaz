@@ -1,11 +1,11 @@
 const BST = {
-    "topicID" : 12,
+    "topicId" : 12,
     "topic" : "Binary Search Tree",
     "totalQues": 16,
     "totalEasy" : 2,
     "totalMedium": 12,
     "totalHard" : 2,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into binary search trees (BST), a specialized form of binary trees with a defined ordering property. In a BST, the left subtree contains values less than the parent, and the right subtree contains values greater than the parent. In our DSA cheat sheet, we've covered most frequently asked questions about binary search trees. Here, you'll find operations like insertion, deletion, and searching, offering a concise overview of this crucial data structure.",
     "problems" : [
         {
             "problemId" : 258,
@@ -97,7 +97,7 @@ const BST = {
         },
         {
             "problemId" : 269,
-            "title": "Inorder Predecessor in BST",
+            "title": "Predecessor and Successor in BST",
             "difficulty": "Medium",
             "article": "https://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/",
             "leetcode": "",
@@ -136,5 +136,5 @@ const BST = {
             "gfg": "https://www.geeksforgeeks.org/problems/largest-bst/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/Lc-4.png"
 }

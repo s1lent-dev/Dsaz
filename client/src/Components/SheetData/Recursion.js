@@ -1,11 +1,11 @@
 const Recursion = {
-    "topicID" : 10,
+    "topicId" : 10,
     "topic" : "Recursion & Backtracking",
     "totalQues": 27,
     "totalEasy" : 0,
     "totalMedium": 17,
     "totalHard" : 10,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're delving into recursion, a powerful programming technique where a function calls itself to solve a problem by breaking it into smaller subproblems. In our DSA cheat sheet, we explore the fundamentals of recursion, including base cases, recursive calls, and stack memory management, providing a comprehensive understanding of this essential programming approach.",
     "problems" : [
         {
             "problemId" : 201,
@@ -224,5 +224,5 @@ const Recursion = {
             "gfg": ""
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/recursion.jpeg"
 }

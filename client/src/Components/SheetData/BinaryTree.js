@@ -1,11 +1,11 @@
 const Binarytree = {
-    "topicID" : 11,
+    "topicId" : 11,
     "topic" : "Binary Tree",
     "totalQues": 30,
     "totalEasy" : 8,
     "totalMedium": 15,
     "totalHard" : 7,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into binary trees, a foundational data structure where nodes are linked hierarchically, each node having at most two children. In our DSA cheat sheet, we've covered most frequently asked questions about binary trees. Here, you'll find essential operations like tree traversal, insertion, and deletion, giving you a comprehensive understanding in just a few lines.",
     "problems" : [
         {
             "problemId" : 228,
@@ -248,5 +248,5 @@ const Binarytree = {
             "gfg": "https://www.geeksforgeeks.org/problems/flatten-binary-tree-to-linked-list/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/Lc-4.png"
 }

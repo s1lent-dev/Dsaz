@@ -1,11 +1,11 @@
 const Greedy = {
-    "topicID" : 14,
-    "topic" : "Greedy Algorithms",
+    "topicId" : 14,
+    "topic" : "Greedy Algorithm",
     "totalQues": 16,
     "totalEasy" : 1,
     "totalMedium": 12,
     "totalHard" : 3,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're diving into greedy algorithms, which make locally optimal choices aiming for a global optimum. These algorithms excel in optimization problems where exact solutions are challenging. In our DSA cheat sheet, we've covered most frequently asked questions about greedy algorithms. Here, you'll find examples of greedy strategies, their advantages, and potential pitfalls, providing a comprehensive understanding in a few lines.",
     "problems" : [
         {
             "problemId" : 290,
@@ -136,5 +136,5 @@ const Greedy = {
             "gfg": "https://www.geeksforgeeks.org/problems/non-overlapping-intervals/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/greedy.jpg"
 }

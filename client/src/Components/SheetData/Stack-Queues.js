@@ -1,11 +1,11 @@
 const Stack_Queues = {
-    "topicID" : 8,
+    "topicId" : 8,
     "topic" : "Stack & Queues",
     "totalQues": 26,
     "totalEasy" : 5,
     "totalMedium": 14,
     "totalHard" : 7,
-    "overview": "Arrays are ordered collections of contiguous memory locations and accessed based on index. Matrix is 2-D array which organizes data in rows and columns. Strings are sequence / array of characters.",
+    "overview": "We're exploring stacks and queues, essential linear data structures in programming. Stacks follow the Last In, First Out (LIFO) principle, making them ideal for tasks like parsing expressions. Queues adhere to the First In, First Out (FIFO) principle, suitable for scenarios like task scheduling. In our DSA cheat sheet, we delve into the implementation, operations, and applications of stacks and queues, equipping you with the knowledge to leverage these structures effectively.",
     "problems" : [
         {
             "problemId" : 159,
@@ -216,5 +216,5 @@ const Stack_Queues = {
             "gfg": "https://www.geeksforgeeks.org/problems/lfu-cache-1665050355/1"
         }
     ],
-    "img" : "/Dsaz/Images/arrays.jpg"
+    "img" : "/Images/stack.jpg"
 }
