@@ -102,7 +102,7 @@ const Bitmasking = {
             "article": "https://leetcode.ca/2021-10-19-2035-Partition-Array-Into-Two-Arrays-to-Minimize-Sum-Difference/",
             "leetcode": "https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/description/",
             "gfg": "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1"
-        },
+        }
     ],
     "img" : "/Images/bitmasking.jpg"
 }

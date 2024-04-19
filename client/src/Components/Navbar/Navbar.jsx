@@ -5,7 +5,7 @@ import "./styles.scss";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "../../assets/Dsaz logo.svg";
-import pfp from "../../assets/Dsaz logo.svg";
+import pfp from "../../assets/coding 2.svg";
 import LoginIcon from '@mui/icons-material/Login';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useSelector, useDispatch } from "react-redux";

@@ -78,7 +78,7 @@ const Sorting = {
             "article": "https://takeuforward.org/data-structure/heap-sort/",
             "leetcode": "",
             "gfg": "https://www.geeksforgeeks.org/problems/heap-sort/1"
-        },
+        }
     ],
     "img" : "/Images/sorting.jpg"
 }

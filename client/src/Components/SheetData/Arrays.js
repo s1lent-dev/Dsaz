@@ -1,5 +1,5 @@
 const Arrays = {
-    "topicID" : 1,
+    "topicId" : 1,
     "topic" : "Arrays & Matrix",
     "totalQues": 34,
     "totalEasy" : 14,
