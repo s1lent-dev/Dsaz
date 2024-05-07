@@ -6,7 +6,7 @@ import note from "../../assets/Articles.webp";
 import { useSelector } from "react-redux";
 import { useUpdate } from "../../context/ApiCalls";
 import { useFetchSingleSheet } from "../../context/ApiCalls";
-const { fetchData, loading, error } = useFetchSingleSheet();
+
 
 const SingleQuestion = ({topicId, problem, index, background, setIsNotesOpen, setProblem}) => {
   
@@ -15,6 +15,8 @@ const SingleQuestion = ({topicId, problem, index, background, setIsNotesOpen, se
   const isLogin = useSelector((state) => state.user.isLogin);
   const AuthToken = userData.accessToken;
   const [selectedStatus, setSelectedStatus] = useState(problem.status);
+  const { fetchData, loading, error } = useFetchSingleSheet();
+  
   useEffect(() => {
     setSelectedStatus(problem.status);
   }, [problem.status]);
