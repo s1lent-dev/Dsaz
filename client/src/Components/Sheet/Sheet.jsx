@@ -24,7 +24,7 @@ const Sheet = () => {
         AuthToken,
         userData.email
       ); // Pass email as a parameter
-  }, [fetchData, AuthToken, userData.email]);
+  }, []);
 
   useEffect(() => {
     if (Topic) {
