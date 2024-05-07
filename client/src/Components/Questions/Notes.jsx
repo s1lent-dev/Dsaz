@@ -6,7 +6,7 @@ import { useUpdateNotes } from '../../context/ApiCalls';
 import { useFetchSingleSheet } from '../../context/ApiCalls';
 
 const Notes = ({ setIsNotesOpen, problem, topicId }) => {
-  const { updateNotes, loading, error } = useUpdateNotes();
+  const { updateNotes } = useUpdateNotes();
   const [selectedNotes, setSelectedNotes] = useState(problem.notes);
   const userData = useSelector((state) => state.user.userData);
   const AuthToken = userData.accessToken;

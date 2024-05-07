@@ -11,9 +11,9 @@ const Topics = ({data, isLogin}) => {
     const navigate = useNavigate();
     const handleClick = () => {
       if(isLogin){
-        navigate(`/${data.topicId}`)
         dispatch(setIsTopicId(data.topicId))
         localStorage.setItem('topicId', JSON.stringify(data.topicId))
+        navigate(`/${data.topicId}`)
       } else {
         alert('Please login to solve the questions')
       }

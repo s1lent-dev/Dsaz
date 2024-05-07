@@ -19,21 +19,18 @@ const Sheet = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    if (isLogin) {
       fetchData(
         "https://dsaz-server.vercel.app/api/sheets/getAll",
         AuthToken,
         userData.email
       ); // Pass email as a parameter
-    }
-  }, []);
+  }, [fetchData, AuthToken, userData.email]);
 
   useEffect(() => {
     if (Topic) {
       const filtered = sheetData.filter((data) => {
         const topicWords = data.topic.toLowerCase().split(' ');
         const searchWords = Topic.toLowerCase().split(' ');
-  
         return searchWords.every((word) => topicWords.some((topicWord) => topicWord.includes(word)));
       });
       setFilteredData(filtered);
