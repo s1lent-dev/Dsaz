@@ -40,7 +40,7 @@ router.get("/getSheets", async (req, res) => {
 });
 
 // Get
-router.get("/get/:topicId", async (req, res) => {
+router.get("/get/:topicId", verify, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
     if (!user) {
@@ -59,7 +59,7 @@ router.get("/get/:topicId", async (req, res) => {
 
 
 // Get All
-router.get("/getAll", async (req, res) => {
+router.get("/getAll", verify, async (req, res) => {
   try {
     const user = await User.findById(req.user.id); // Use req.query instead of req.body for GET requests
     if (!user) {
@@ -74,7 +74,7 @@ router.get("/getAll", async (req, res) => {
 });
 
 // Update
-router.put("/update/:topicId/:problemId",  async (req, res) => {
+router.put("/update/:topicId/:problemId", verify,  async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
     if (!user) {
@@ -130,7 +130,7 @@ router.put("/update/:topicId/:problemId",  async (req, res) => {
   }
 });
 
-router.put("/updateNotes/:topicId/:problemId", async (req, res) => {
+router.put("/updateNotes/:topicId/:problemId", verify, async (req, res) => {
   try{
     const user = await User.findById(req.user.id);
     if (!user) {

@@ -25,7 +25,7 @@ const useFetch = () => {
   const dispatch = useDispatch();
   const fetchData = async (url, token, email) => { // Pass email as a separate parameter
     try {
-      const res = await axios.get(url); // Pass email as a query parameter
+      const res = await axios.get(url, { headers: { token : `Bearer ${token}` } }); // Pass email as a query parameter
       const data = res.data;
       dispatch(setSheetData(data));
       dispatch(setIsLoading(false));
@@ -52,7 +52,7 @@ const useFetchSingleSheet = () => {
     const [error, setError] = useState(null);
         const fetchData = async (url, token, email) => {
             try {
-                const res = await axios.get(url);
+                const res = await axios.get(url, { headers: {token : `Bearer ${token}`} });
                 const data = res.data;
                 dispatch(setSingleSheetData(data));
                 dispatch(setisLoading(false));
@@ -81,7 +81,7 @@ const useUpdate = () => {
   const updateStatus = async (url, token, body, email) => {
     setLoading(true);
     try {
-      const res = await axios.put(url, body);
+      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}`} });
       const data = res.data;
       dispatch(setsinglesheetdata(data)); // Update local state with the updated data
       localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
@@ -103,7 +103,7 @@ const useUpdateNotes = () => {
   const updateNotes = async (url, token, body, email) => {
     setLoading(true);
     try {
-      const res = await axios.put(url, body);
+      const res = await axios.put(url, body, { headers: { token: `Bearer ${token}`} });
       const data = res.data;
       dispatch(setsinglesheetdata(data)); // Update local state with the updated data
       localStorage.setItem("singlesheetdata", JSON.stringify(data)); // Update local storage with the updated data
