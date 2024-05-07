@@ -15,8 +15,8 @@ const SingleQuestion = ({topicId, problem, index, background, setIsNotesOpen, se
   const isLogin = useSelector((state) => state.user.isLogin);
   const AuthToken = userData.accessToken;
   const [selectedStatus, setSelectedStatus] = useState(problem.status);
-  const { fetchData, loading, error } = useFetchSingleSheet();
-  
+  const { fetchData } = useFetchSingleSheet();
+
   useEffect(() => {
     setSelectedStatus(problem.status);
   }, [problem.status]);

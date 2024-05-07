@@ -10,7 +10,7 @@ const Notes = ({ setIsNotesOpen, problem, topicId }) => {
   const [selectedNotes, setSelectedNotes] = useState(problem.notes);
   const userData = useSelector((state) => state.user.userData);
   const AuthToken = userData.accessToken;
-  const { fetchData, loading, error } = useFetchSingleSheet();
+  const { fetchData } = useFetchSingleSheet();
 
   const handleNotesChange = async () => {
     const body = { notes: selectedNotes };
