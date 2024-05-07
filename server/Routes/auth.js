@@ -13,6 +13,8 @@ router.post("/register", async (req, res) => {
       if (!sheets || sheets.length === 0) {
           return res.status(404).json("Sheets not found");
         }
+      const userExist = await User.findOne({ email: req.body.email });
+      if (userExist) return res.status(409).json("User already exists");
       const encryptedPassword = CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SECRET).toString();
       const newUser = new User({
           username: req.body.username,
