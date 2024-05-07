@@ -5,6 +5,8 @@ import gfg from "../../assets/gfg.png";
 import note from "../../assets/Articles.webp";
 import { useSelector } from "react-redux";
 import { useUpdate } from "../../context/ApiCalls";
+import { useFetchSingleSheet } from "../../context/ApiCalls";
+const { fetchData, loading, error } = useFetchSingleSheet();
 
 const SingleQuestion = ({topicId, problem, index, background, setIsNotesOpen, setProblem}) => {
   
@@ -24,6 +26,11 @@ const SingleQuestion = ({topicId, problem, index, background, setIsNotesOpen, se
         `https://dsaz-server.vercel.app/api/sheets/update/${topicId}/${problemId}`,
         AuthToken,
         body,
+        userData.email
+      );
+      await fetchData(
+        `https://dsaz-server.vercel.app/api/sheets/get/${topicId}`,
+        AuthToken,
         userData.email
       );
       setSelectedStatus(newStatus);

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import { useSelector } from 'react-redux';
 import { useUpdateNotes } from '../../context/ApiCalls';
+import { useFetchSingleSheet } from '../../context/ApiCalls';
 
 const Notes = ({ setIsNotesOpen, problem, topicId }) => {
   const { updateNotes, loading, error } = useUpdateNotes();
   const [selectedNotes, setSelectedNotes] = useState(problem.notes);
   const userData = useSelector((state) => state.user.userData);
   const AuthToken = userData.accessToken;
+  const { fetchData, loading, error } = useFetchSingleSheet();
 
   const handleNotesChange = async () => {
     const body = { notes: selectedNotes };
@@ -16,6 +18,11 @@ const Notes = ({ setIsNotesOpen, problem, topicId }) => {
       `https://dsaz-server.vercel.app/api/sheets/updateNotes/${topicId}/${problem.problemId}`,
       AuthToken,
       body,
+      userData.email
+    );
+    await fetchData(
+      `https://dsaz-server.vercel.app/api/sheets/get/${topicId}`,
+      AuthToken,
       userData.email
     );
     // After notes are successfully updated, show alert and close notes component
