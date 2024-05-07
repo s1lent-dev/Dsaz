@@ -29,6 +29,7 @@ const useFetch = () => {
       const data = res.data;
       dispatch(setSheetData(data));
       dispatch(setIsLoading(false));
+      dispatch(setIsError(false));
       localStorage.setItem("sheetData", JSON.stringify(data));
       localStorage.setItem("isLoading", false);
       localStorage.setItem("isError", false);
