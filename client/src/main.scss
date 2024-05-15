@@ -82,6 +82,7 @@
 
 body {
   background-color: var(--black);
+  user-select: none;
 }
 
 ::-webkit-scrollbar {
